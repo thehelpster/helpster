@@ -1,8 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
-
 <div class ='container'>
-	
+	<p>Hello World</p>
 </div>
-@stop
