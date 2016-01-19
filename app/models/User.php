@@ -12,7 +12,6 @@ use Bbatsche\Entrust\Traits\EntrustUserTrait;
 
 class User extends Eloquent implements ConfideUserInterface, EntrustUserInterface {
 
-	// use UserTrait, RemindableTrait;
 	use ConfideUser;
 	use EntrustUserTrait;
 
