@@ -15,7 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
-//
+
+Route::get('/navigation', 'HomeController@showNavbar');
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

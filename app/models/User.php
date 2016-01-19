@@ -9,10 +9,8 @@ use Zizaco\Confide\ConfideUserInterface;
 use Bbatsche\Entrust\Contracts\EntrustUserInterface;
 use Bbatsche\Entrust\Traits\EntrustUserTrait;
 
-
 class User extends Eloquent implements ConfideUserInterface, EntrustUserInterface {
 
-	// use UserTrait, RemindableTrait;
 	use ConfideUser;
 	use EntrustUserTrait;
 
@@ -31,6 +29,3 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	protected $hidden = array('password', 'remember_token');
 
 }
-
-
-

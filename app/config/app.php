@@ -195,7 +195,6 @@ return array(
 		'Confide'    		=> 'Zizaco\Confide\Facade',
 		'Debugbar'			=> 'Barryvdh\Debugbar\Facade',
 		'Entrust'    		=> 'Bbatsche\Entrust\EntrustFacade'
-
 	),
 
 );
