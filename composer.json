@@ -8,6 +8,10 @@
 		"laravel/framework": "4.2.*",
 		"zizaco/confide": "~4.3@dev"
 	},
+	"require-dev":{
+		"barryvdh/laravel-debugbar": "~1.8",
+		"way/generators": "~2.0"
+	},	
 	"autoload": {
 		"classmap": [
 			"app/commands",
