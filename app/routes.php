@@ -42,3 +42,15 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', 'UsersController@logout');
+
+Route::get('login', 'UsersController@create');
+Route::post('login', 'UsersController@store');
+Route::get('volunteer.create', 'VolunteerController@createProfile');
+Route::post('volunteer.create', 'VolunteerController@storeProfile');
+Route::get('organization.create', 'OrganizationController@createProfile');
+Route::post('organization.create', 'OrganizationController@storeProfile');
+Route::get('volunteer.edit', 'VolunteerController@editProfile');
+Route::get('organization.edit', 'OrganizationController@editProfile');
+Route::post('organization.edit', 'OrganizationController@postProfiler');
+Route::get('events.edit', 'EventController@editProfile');
+Route::get('events.create', 'EventController@create');
