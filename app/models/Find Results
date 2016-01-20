@@ -1,0 +1,1038 @@
+Searching 3755 files for "repository"
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/CONTRIBUTING.md:
+    1  # Contribution Guidelines
+    2  
+    3: Please submit all issues and pull requests to the [laravel/framework](http://github.com/laravel/framework) repository!
+    4  
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/readme.md:
+   19  ### Contributing To Laravel
+   20  
+   21: **All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+   22  
+   23  ### License
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/config/database.php:
+   88  	/*
+   89  	|--------------------------------------------------------------------------
+   90: 	| Migration Repository Table
+   91  	|--------------------------------------------------------------------------
+   92  	|
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/controllers/UsersController.php:
+   28      public function store()
+   29      {
+   30:         $repo = App::make('UserRepository');
+   31          $user = $repo->signup(Input::all());
+   32  
+   ..
+   77      public function doLogin()
+   78      {
+   79:         $repo = App::make('UserRepository');
+   80          $input = Input::all();
+   81  
+   ..
+  166      public function doResetPassword()
+  167      {
+  168:         $repo = App::make('UserRepository');
+  169          $input = array(
+  170              'token'                 =>Input::get('token'),
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/models/UserRepository.php:
+    4  
+    5  /**
+    6:  * Class UserRepository
+    7   *
+    8   * This service abstracts some interactions that occurs between Confide and
+    9   * the Database.
+   10   */
+   11: class UserRepository
+   12  {
+   13      /**
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/storage/logs/laravel.log:
+    6  #3 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(102): Illuminate\Config\FileLoader->getRequire('/vagrant/sites/...')
+    7  #4 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(87): Illuminate\Config\FileLoader->mergeEnvironment(Array, '/vagrant/sites/...')
+    8: #5 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(152): Illuminate\Config\FileLoader->load('local', 'database', NULL)
+    9: #6 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(99): Illuminate\Config\Repository->load('database', NULL, '*::database')
+   10: #7 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(389): Illuminate\Config\Repository->get('database.migrat...')
+   11: #8 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php(49): Illuminate\Config\Repository->offsetGet('database.migrat...')
+   12  #9 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(214): Illuminate\Database\MigrationServiceProvider->Illuminate\Database\{closure}(Object(Illuminate\Foundation\Application))
+   13  #10 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(501): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+   ..
+   43  #3 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(102): Illuminate\Config\FileLoader->getRequire('/vagrant/sites/...')
+   44  #4 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(87): Illuminate\Config\FileLoader->mergeEnvironment(Array, '/vagrant/sites/...')
+   45: #5 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(152): Illuminate\Config\FileLoader->load('local', 'database', NULL)
+   46: #6 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(99): Illuminate\Config\Repository->load('database', NULL, '*::database')
+   47: #7 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(389): Illuminate\Config\Repository->get('database.migrat...')
+   48: #8 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php(49): Illuminate\Config\Repository->offsetGet('database.migrat...')
+   49  #9 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(214): Illuminate\Database\MigrationServiceProvider->Illuminate\Database\{closure}(Object(Illuminate\Foundation\Application))
+   50  #10 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(501): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+   ..
+   80  #3 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(102): Illuminate\Config\FileLoader->getRequire('/vagrant/sites/...')
+   81  #4 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php(87): Illuminate\Config\FileLoader->mergeEnvironment(Array, '/vagrant/sites/...')
+   82: #5 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(152): Illuminate\Config\FileLoader->load('local', 'database', NULL)
+   83: #6 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(99): Illuminate\Config\Repository->load('database', NULL, '*::database')
+   84: #7 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php(389): Illuminate\Config\Repository->get('database.migrat...')
+   85: #8 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php(49): Illuminate\Config\Repository->offsetGet('database.migrat...')
+   86  #9 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(214): Illuminate\Database\MigrationServiceProvider->Illuminate\Database\{closure}(Object(Illuminate\Foundation\Application))
+   87  #10 /vagrant/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Container/Container.php(501): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/storage/meta/services.json:
+   90          "swift.transport": "Illuminate\\Mail\\MailServiceProvider",
+   91          "migrator": "Illuminate\\Database\\MigrationServiceProvider",
+   92:         "migration.repository": "Illuminate\\Database\\MigrationServiceProvider",
+   93          "command.migrate": "Illuminate\\Database\\MigrationServiceProvider",
+   94          "command.migrate.rollback": "Illuminate\\Database\\MigrationServiceProvider",
+   ..
+  110          "remote": "Illuminate\\Remote\\RemoteServiceProvider",
+  111          "auth.reminder": "Illuminate\\Auth\\Reminders\\ReminderServiceProvider",
+  112:         "auth.reminder.repository": "Illuminate\\Auth\\Reminders\\ReminderServiceProvider",
+  113          "command.auth.reminders": "Illuminate\\Auth\\Reminders\\ReminderServiceProvider",
+  114          "seeder": "Illuminate\\Database\\SeedServiceProvider",
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/storage/views/84e854503b16e8790fa4f1d8a89494be:
+    2  
+    3  
+    4: <?php $repositoryClass = strstr($model, '\\') ? substr($model, 0, -strlen(strrchr($model, '\\'))).'\UserRepository' : 'UserRepository' ?>
+    5  <?php if($namespace): ?>
+    6  
+    .
+   41      public function <?php echo (! $restful) ? 'store' : 'postIndex'; ?>()
+   42      {
+   43:         $repo = App::make('<?php echo $repositoryClass; ?>');
+   44          $user = $repo->signup(Input::all());
+   45  
+   ..
+   90      public function <?php echo (! $restful) ? 'doLogin' : 'postLogin'; ?>()
+   91      {
+   92:         $repo = App::make('<?php echo $repositoryClass; ?>');
+   93          $input = Input::all();
+   94  
+   ..
+  179      public function <?php echo (! $restful) ? 'doResetPassword' : 'postReset'; ?>()
+  180      {
+  181:         $repo = App::make('<?php echo $repositoryClass; ?>');
+  182          $input = array(
+  183              'token'                 =>Input::get('token'),
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/app/storage/views/95322e17a070c08bc41a44b99e90e842:
+   11  
+   12  /**
+   13:  * Class UserRepository
+   14   *
+   15   * This service abstracts some interactions that occurs between Confide and
+   16   * the Database.
+   17   */
+   18: class UserRepository
+   19  {
+   20      /**
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/composer/autoload_classmap.php:
+   19      'TestCase' => $baseDir . '/app/tests/TestCase.php',
+   20      'User' => $baseDir . '/app/models/User.php',
+   21:     'UserRepository' => $baseDir . '/app/models/UserRepository.php',
+   22      'UsersController' => $baseDir . '/app/controllers/UsersController.php',
+   23      'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/readme.md:
+    7  [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+    8  
+    9: > **Note:** This repository contains the core code of the Laravel framework. If you want to build an application using Laravel 4, visit the main [Laravel repository](https://github.com/laravel/laravel).
+   10  
+   11  ## Laravel PHP Framework
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Guard.php:
+  178  
+  179  	/**
+  180: 	 * Pull a user from the repository by its recaller ID.
+  181  	 *
+  182  	 * @param  string  $recaller
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Console/ClearRemindersCommand.php:
+   26  	public function fire()
+   27  	{
+   28: 		$this->laravel['auth.reminder.repository']->deleteExpired();
+   29  
+   30  		$this->info('Expired reminders cleared!');
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Reminders/DatabaseReminderRepository.php:
+    4  use Illuminate\Database\Connection;
+    5  
+    6: class DatabaseReminderRepository implements ReminderRepositoryInterface {
+    7  
+    8  	/**
+    .
+   35  
+   36  	/**
+   37: 	 * Create a new reminder repository instance.
+   38  	 *
+   39  	 * @param  \Illuminate\Database\Connection  $connection
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Reminders/PasswordBroker.php:
+   43  
+   44  	/**
+   45: 	 * The password reminder repository.
+   46  	 *
+   47: 	 * @var \Illuminate\Auth\Reminders\ReminderRepositoryInterface  $reminders
+   48  	 */
+   49  	protected $reminders;
+   ..
+   80  	 * Create a new password broker instance.
+   81  	 *
+   82: 	 * @param  \Illuminate\Auth\Reminders\ReminderRepositoryInterface  $reminders
+   83  	 * @param  \Illuminate\Auth\UserProviderInterface  $users
+   84  	 * @param  \Illuminate\Mail\Mailer  $mailer
+   ..
+   86  	 * @return void
+   87  	 */
+   88: 	public function __construct(ReminderRepositoryInterface $reminders,
+   89                                  UserProviderInterface $users,
+   90                                  Mailer $mailer,
+   ..
+  271  
+  272  	/**
+  273: 	 * Get the password reminder repository implementation.
+  274  	 *
+  275: 	 * @return \Illuminate\Auth\Reminders\ReminderRepositoryInterface
+  276  	 */
+  277: 	protected function getRepository()
+  278  	{
+  279  		return $this->reminders;
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Reminders/ReminderRepositoryInterface.php:
+    1  <?php namespace Illuminate\Auth\Reminders;
+    2  
+    3: interface ReminderRepositoryInterface {
+    4  
+    5  	/**
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Auth/Reminders/ReminderServiceProvider.php:
+    5  use Illuminate\Auth\Console\ClearRemindersCommand;
+    6  use Illuminate\Auth\Console\RemindersControllerCommand;
+    7: use Illuminate\Auth\Reminders\DatabaseReminderRepository as DbRepository;
+    8  
+    9  class ReminderServiceProvider extends ServiceProvider {
+   ..
+   25  		$this->registerPasswordBroker();
+   26  
+   27: 		$this->registerReminderRepository();
+   28  
+   29  		$this->registerCommands();
+   ..
+   39  		$this->app->bindShared('auth.reminder', function($app)
+   40  		{
+   41: 			// The reminder repository is responsible for storing the user e-mail addresses
+   42  			// and password reset tokens. It will be used to verify the tokens are valid
+   43  			// for the given e-mail addresses. We will resolve an implementation here.
+   44: 			$reminders = $app['auth.reminder.repository'];
+   45  
+   46  			$users = $app['auth']->driver()->getProvider();
+   ..
+   48  			$view = $app['config']['auth.reminder.email'];
+   49  
+   50: 			// The password broker uses the reminder repository to validate tokens and send
+   51  			// reminder e-mails, as well as validating that password reset process as an
+   52  			// aggregate service of sorts providing a convenient interface for resets.
+   ..
+   60  
+   61  	/**
+   62: 	 * Register the reminder repository implementation.
+   63  	 *
+   64  	 * @return void
+   65  	 */
+   66: 	protected function registerReminderRepository()
+   67  	{
+   68: 		$this->app->bindShared('auth.reminder.repository', function($app)
+   69  		{
+   70  			$connection = $app['db']->connection();
+   71  
+   72: 			// The database reminder repository is an implementation of the reminder repo
+   73  			// interface, and is responsible for the actual storing of auth tokens and
+   74  			// their e-mail addresses. We will inject this table and hash key to it.
+   ..
+   79  			$expire = $app['config']->get('auth.reminder.expire', 60);
+   80  
+   81: 			return new DbRepository($connection, $table, $key, $expire);
+   82  		});
+   83  	}
+   ..
+  117  	public function provides()
+  118  	{
+  119: 		return array('auth.reminder', 'auth.reminder.repository', 'command.auth.reminders');
+  120  	}
+  121  
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php:
+   13  	protected function createApcDriver()
+   14  	{
+   15: 		return $this->repository(new ApcStore(new ApcWrapper, $this->getPrefix()));
+   16  	}
+   17  
+   ..
+   23  	protected function createArrayDriver()
+   24  	{
+   25: 		return $this->repository(new ArrayStore);
+   26  	}
+   27  
+   ..
+   35  		$path = $this->app['config']['cache.path'];
+   36  
+   37: 		return $this->repository(new FileStore($this->app['files'], $path));
+   38  	}
+   39  
+   ..
+   49  		$memcached = $this->app['memcached.connector']->connect($servers);
+   50  
+   51: 		return $this->repository(new MemcachedStore($memcached, $this->getPrefix()));
+   52  	}
+   53  
+   ..
+   59  	protected function createNullDriver()
+   60  	{
+   61: 		return $this->repository(new NullStore);
+   62  	}
+   63  
+   ..
+   69  	protected function createWincacheDriver()
+   70  	{
+   71: 		return $this->repository(new WinCacheStore($this->getPrefix()));
+   72  	}
+   73  
+   ..
+   79  	protected function createXcacheDriver()
+   80  	{
+   81: 		return $this->repository(new XCacheStore($this->getPrefix()));
+   82  	}
+   83  
+   ..
+   91  		$redis = $this->app['redis'];
+   92  
+   93: 		return $this->repository(new RedisStore($redis, $this->getPrefix()));
+   94  	}
+   95  
+   ..
+  112  		$prefix = $this->getPrefix();
+  113  
+  114: 		return $this->repository(new DatabaseStore($connection, $encrypter, $table, $prefix));
+  115  	}
+  116  
+  ...
+  149  
+  150  	/**
+  151: 	 * Create a new cache repository with the given implementation.
+  152  	 *
+  153  	 * @param  \Illuminate\Cache\StoreInterface  $store
+  154: 	 * @return \Illuminate\Cache\Repository
+  155  	 */
+  156: 	protected function repository(StoreInterface $store)
+  157  	{
+  158: 		return new Repository($store);
+  159  	}
+  160  
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Cache/Repository.php:
+    7  use Illuminate\Support\Traits\MacroableTrait;
+    8  
+    9: class Repository implements ArrayAccess {
+   10  
+   11  	use MacroableTrait {
+   ..
+   28  
+   29  	/**
+   30: 	 * Create a new cache repository instance.
+   31  	 *
+   32  	 * @param  \Illuminate\Cache\StoreInterface  $store
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Config/Repository.php:
+    5  use Illuminate\Support\NamespacedItemResolver;
+    6  
+    7: class Repository extends NamespacedItemResolver implements ArrayAccess {
+    8  
+    9  	/**
+   ..
+   43  
+   44  	/**
+   45: 	 * Create a new configuration repository.
+   46  	 *
+   47  	 * @param  \Illuminate\Config\LoaderInterface  $loader
+   ..
+  236  		$this->packages[] = $namespace;
+  237  
+  238: 		// First we will simply register the namespace with the repository so that it
+  239  		// can be loaded. Once we have done that we'll register an after namespace
+  240  		// callback so that we can cascade an application package configuration.
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php:
+   10  use Illuminate\Database\Console\Migrations\RollbackCommand;
+   11  use Illuminate\Database\Console\Migrations\MigrateMakeCommand;
+   12: use Illuminate\Database\Migrations\DatabaseMigrationRepository;
+   13  
+   14  class MigrationServiceProvider extends ServiceProvider {
+   ..
+   28  	public function register()
+   29  	{
+   30: 		$this->registerRepository();
+   31  
+   32  		// Once we have registered the migrator instance we will go ahead and register
+   ..
+   39  
+   40  	/**
+   41: 	 * Register the migration repository service.
+   42  	 *
+   43  	 * @return void
+   44  	 */
+   45: 	protected function registerRepository()
+   46  	{
+   47: 		$this->app->bindShared('migration.repository', function($app)
+   48  		{
+   49  			$table = $app['config']['database.migrations'];
+   50  
+   51: 			return new DatabaseMigrationRepository($app['db'], $table);
+   52  		});
+   53  	}
+   ..
+   65  		$this->app->bindShared('migrator', function($app)
+   66  		{
+   67: 			$repository = $app['migration.repository'];
+   68  
+   69: 			return new Migrator($repository, $app['db'], $app['files']);
+   70  		});
+   71  	}
+   ..
+  161  		$this->app->bindShared('command.migrate.install', function($app)
+  162  		{
+  163: 			return new InstallCommand($app['migration.repository']);
+  164  		});
+  165  	}
+  ...
+  208  	{
+  209  		return array(
+  210: 			'migrator', 'migration.repository', 'command.migrate',
+  211  			'command.migrate.rollback', 'command.migrate.reset',
+  212  			'command.migrate.refresh', 'command.migrate.install',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php:
+    3  use Illuminate\Console\Command;
+    4  use Symfony\Component\Console\Input\InputOption;
+    5: use Illuminate\Database\Migrations\MigrationRepositoryInterface;
+    6  
+    7  class InstallCommand extends Command {
+    .
+   19  	 * @var string
+   20  	 */
+   21: 	protected $description = 'Create the migration repository';
+   22  
+   23  	/**
+   24: 	 * The repository instance.
+   25  	 *
+   26: 	 * @var \Illuminate\Database\Migrations\MigrationRepositoryInterface
+   27  	 */
+   28: 	protected $repository;
+   29  
+   30  	/**
+   31  	 * Create a new migration install command instance.
+   32  	 *
+   33: 	 * @param  \Illuminate\Database\Migrations\MigrationRepositoryInterface  $repository
+   34  	 * @return void
+   35  	 */
+   36: 	public function __construct(MigrationRepositoryInterface $repository)
+   37  	{
+   38  		parent::__construct();
+   39  
+   40: 		$this->repository = $repository;
+   41  	}
+   42  
+   ..
+   48  	public function fire()
+   49  	{
+   50: 		$this->repository->setSource($this->input->getOption('database'));
+   51  
+   52: 		$this->repository->createRepository();
+   53  
+   54  		$this->info("Migration table created successfully.");
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php:
+   96  		$this->migrator->setConnection($this->input->getOption('database'));
+   97  
+   98: 		if ( ! $this->migrator->repositoryExists())
+   99  		{
+  100  			$options = array('--database' => $this->input->getOption('database'));
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php:
+    3  use Illuminate\Database\ConnectionResolverInterface as Resolver;
+    4  
+    5: class DatabaseMigrationRepository implements MigrationRepositoryInterface {
+    6  
+    7  	/**
+    .
+   27  
+   28  	/**
+   29: 	 * Create a new database migration repository instance.
+   30  	 *
+   31  	 * @param  \Illuminate\Database\ConnectionResolverInterface  $resolver
+   ..
+  107  
+  108  	/**
+  109: 	 * Create the migration repository data store.
+  110  	 *
+  111  	 * @return void
+  112  	 */
+  113: 	public function createRepository()
+  114  	{
+  115  		$schema = $this->getConnection()->getSchemaBuilder();
+  ...
+  127  
+  128  	/**
+  129: 	 * Determine if the migration repository exists.
+  130  	 *
+  131  	 * @return bool
+  132  	 */
+  133: 	public function repositoryExists()
+  134  	{
+  135  		$schema = $this->getConnection()->getSchemaBuilder();
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationRepositoryInterface.php:
+    1  <?php namespace Illuminate\Database\Migrations;
+    2  
+    3: interface MigrationRepositoryInterface {
+    4  
+    5  	/**
+    .
+   42  
+   43  	/**
+   44: 	 * Create the migration repository data store.
+   45  	 *
+   46  	 * @return void
+   47  	 */
+   48: 	public function createRepository();
+   49  
+   50  	/**
+   51: 	 * Determine if the migration repository exists.
+   52  	 *
+   53  	 * @return bool
+   54  	 */
+   55: 	public function repositoryExists();
+   56  
+   57  	/**
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php:
+    7  
+    8  	/**
+    9: 	 * The migration repository implementation.
+   10  	 *
+   11: 	 * @var \Illuminate\Database\Migrations\MigrationRepositoryInterface
+   12  	 */
+   13: 	protected $repository;
+   14  
+   15  	/**
+   ..
+   44  	 * Create a new migrator instance.
+   45  	 *
+   46: 	 * @param  \Illuminate\Database\Migrations\MigrationRepositoryInterface  $repository
+   47  	 * @param  \Illuminate\Database\ConnectionResolverInterface  $resolver
+   48  	 * @param  \Illuminate\Filesystem\Filesystem  $files
+   49  	 * @return void
+   50  	 */
+   51: 	public function __construct(MigrationRepositoryInterface $repository,
+   52  								Resolver $resolver,
+   53                                  Filesystem $files)
+   ..
+   55  		$this->files = $files;
+   56  		$this->resolver = $resolver;
+   57: 		$this->repository = $repository;
+   58  	}
+   59  
+   ..
+   74  		// against the migrations that have already been run for this package then
+   75  		// run each of the outstanding migrations against a database connection.
+   76: 		$ran = $this->repository->getRan();
+   77  
+   78  		$migrations = array_diff($files, $ran);
+   ..
+  102  		}
+  103  
+  104: 		$batch = $this->repository->getNextBatchNumber();
+  105  
+  106  		// Once we have the array of migrations, we will spin through them and run the
+  ...
+  136  
+  137  		// Once we have run a migrations class, we will log that it was run in this
+  138: 		// repository so that we don't try to run it next time we do a migration
+  139: 		// in the application. A migration repository keeps the migrate order.
+  140: 		$this->repository->log($file, $batch);
+  141  
+  142  		$this->note("<info>Migrated:</info> $file");
+  ...
+  156  		// migration operation. We'll then reverse those migrations and run each
+  157  		// of them "down" to reverse the last migration "operation" which ran.
+  158: 		$migrations = $this->repository->getLast();
+  159  
+  160  		if (count($migrations) == 0)
+  ...
+  200  
+  201  		// Once we have successfully run the migration "down" we will remove it from
+  202: 		// the migration repository so it will be considered to have not been run
+  203  		// by the application then will be able to fire by any later operation.
+  204: 		$this->repository->delete($migration);
+  205  
+  206  		$this->note("<info>Rolled back:</info> $file");
+  ...
+  347  		}
+  348  
+  349: 		$this->repository->setSource($name);
+  350  
+  351  		$this->connection = $name;
+  ...
+  353  
+  354  	/**
+  355: 	 * Get the migration repository instance.
+  356  	 *
+  357: 	 * @return \Illuminate\Database\Migrations\MigrationRepositoryInterface
+  358  	 */
+  359: 	public function getRepository()
+  360  	{
+  361: 		return $this->repository;
+  362  	}
+  363  
+  364  	/**
+  365: 	 * Determine if the migration repository exists.
+  366  	 *
+  367  	 * @return bool
+  368  	 */
+  369: 	public function repositoryExists()
+  370  	{
+  371: 		return $this->repository->repositoryExists();
+  372  	}
+  373  
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:
+  984  
+  985  	/**
+  986: 	 * Get the service provider repository instance.
+  987  	 *
+  988: 	 * @return \Illuminate\Foundation\ProviderRepository
+  989  	 */
+  990: 	public function getProviderRepository()
+  991  	{
+  992  		$manifest = $this['config']['app.manifest'];
+  993  
+  994: 		return new ProviderRepository(new Filesystem, $manifest);
+  995  	}
+  996  
+  ...
+ 1102  			'artisan'        => 'Illuminate\Console\Application',
+ 1103  			'auth'           => 'Illuminate\Auth\AuthManager',
+ 1104: 			'auth.reminder.repository' => 'Illuminate\Auth\Reminders\ReminderRepositoryInterface',
+ 1105  			'blade.compiler' => 'Illuminate\View\Compilers\BladeCompiler',
+ 1106  			'cache'          => 'Illuminate\Cache\CacheManager',
+ 1107: 			'cache.store'    => 'Illuminate\Cache\Repository',
+ 1108: 			'config'         => 'Illuminate\Config\Repository',
+ 1109  			'cookie'         => 'Illuminate\Cookie\CookieJar',
+ 1110  			'encrypter'      => 'Illuminate\Encryption\Encrypter',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:
+    3  use Illuminate\Filesystem\Filesystem;
+    4  
+    5: class ProviderRepository {
+    6  
+    7  	/**
+    .
+   27  
+   28  	/**
+   29: 	 * Create a new service repository instance.
+   30  	 *
+   31  	 * @param  \Illuminate\Filesystem\Filesystem  $files
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Foundation/start.php:
+   39  | Here we will just import a few classes that we need during the booting
+   40  | of the framework. These are mainly classes that involve loading the
+   41: | config files for this application, such as the config repository.
+   42  |
+   43  */
+   ..
+   47  use Illuminate\Foundation\AliasLoader;
+   48  use Illuminate\Config\EnvironmentVariables;
+   49: use Illuminate\Config\Repository as Config;
+   50  
+   51  /*
+   ..
+  122  /*
+  123  |--------------------------------------------------------------------------
+  124: | Register The Configuration Repository
+  125  |--------------------------------------------------------------------------
+  126  |
+  127: | The configuration repository is used to lazily load in the options for
+  128  | this application from the configuration files. The files are easily
+  129  | separated by their concerns so they do not become really crowded.
+  ...
+  208  $providers = $config['providers'];
+  209  
+  210: $app->getProviderRepository()->load($app, $providers);
+  211  
+  212  /*
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Foundation/Console/Optimize/config.php:
+   36      $basePath.'/vendor/symfony/debug/Symfony/Component/Debug/ErrorHandler.php',
+   37      $basePath.'/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Debug/ErrorHandler.php',
+   38:     $basePath.'/vendor/laravel/framework/src/Illuminate/Config/Repository.php',
+   39      $basePath.'/vendor/laravel/framework/src/Illuminate/Support/NamespacedItemResolver.php',
+   40      $basePath.'/vendor/laravel/framework/src/Illuminate/Config/FileLoader.php',
+   ..
+   45      $basePath.'/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php',
+   46      $basePath.'/vendor/laravel/framework/src/Illuminate/Foundation/AliasLoader.php',
+   47:     $basePath.'/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php',
+   48      $basePath.'/vendor/laravel/framework/src/Illuminate/Cookie/CookieServiceProvider.php',
+   49      $basePath.'/vendor/laravel/framework/src/Illuminate/Database/DatabaseServiceProvider.php',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Queue/Worker.php:
+    3  use Illuminate\Queue\Jobs\Job;
+    4  use Illuminate\Events\Dispatcher;
+    5: use Illuminate\Cache\Repository as CacheRepository;
+    6  use Illuminate\Queue\Failed\FailedJobProviderInterface;
+    7  
+    .
+   30  
+   31  	/**
+   32: 	 * The cache repository implementation.
+   33  	 *
+   34: 	 * @var \Illuminate\Cache\Repository
+   35  	 */
+   36  	protected $cache;
+   ..
+  329  
+  330  	/**
+  331: 	 * Set the cache repository implementation.
+  332  	 *
+  333: 	 * @param  \Illuminate\Cache\Repository  $cache
+  334  	 * @return void
+  335  	 */
+  336: 	public function setCache(CacheRepository $cache)
+  337  	{
+  338  		$this->cache = $cache;
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Session/CacheBasedSessionHandler.php:
+    1  <?php namespace Illuminate\Session;
+    2  
+    3: use Illuminate\Cache\Repository;
+    4  
+    5  class CacheBasedSessionHandler implements \SessionHandlerInterface {
+    6  
+    7  	/**
+    8: 	 * The cache repository instance.
+    9  	 *
+   10: 	 * @var \Illuminate\Cache\Repository
+   11  	 */
+   12  	protected $cache;
+   ..
+   22  	 * Create a new cache driven handler instance.
+   23  	 *
+   24: 	 * @param  \Illuminate\Cache\Repository  $cache
+   25  	 * @param  int  $minutes
+   26  	 * @return void
+   27  	 */
+   28: 	public function __construct(Repository $cache, $minutes)
+   29  	{
+   30  		$this->cache = $cache;
+   ..
+   81  
+   82  	/**
+   83: 	 * Get the underlying cache repository.
+   84  	 *
+   85: 	 * @return \Illuminate\Cache\Repository
+   86  	 */
+   87  	public function getCache()
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Support/Facades/Cache.php:
+    3  /**
+    4   * @see \Illuminate\Cache\CacheManager
+    5:  * @see \Illuminate\Cache\Repository
+    6   */
+    7  class Cache extends Facade {
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/laravel/framework/src/Illuminate/Support/Facades/Config.php:
+    2  
+    3  /**
+    4:  * @see \Illuminate\Config\Repository
+    5   */
+    6  class Config extends Facade {
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/phpseclib/phpseclib/composer.lock:
+  196                  "pdepend/pdepend": "PHP version of JDepend",
+  197                  "pear/archive_tar": "Tar file management class",
+  198:                 "pear/versioncontrol_git": "A library that provides OO interface to handle Git repository",
+  199                  "pear/versioncontrol_svn": "A simple OO-style interface for Subversion, the free/open-source version control system",
+  200                  "phpdocumentor/phpdocumentor": "Documentation Generator for PHP",
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/phpseclib/phpseclib/phpseclib/File/X509.php:
+ 1264              '1.3.6.1.5.5.7.48.2' => 'id-ad-caIssuers',
+ 1265              '1.3.6.1.5.5.7.48.3' => 'id-ad-timeStamping',
+ 1266:             '1.3.6.1.5.5.7.48.5' => 'id-ad-caRepository',
+ 1267              '2.5.4' => 'id-at',
+ 1268              '2.5.4.41' => 'id-at-name',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/predis/predis/CONTRIBUTING.md:
+   29  
+   30  The recommended way to contribute to Predis is to fork the project on GitHub, create topic branches
+   31: on your newly created repository to fix bugs or add new features (possibly with tests covering your
+   32  modifications) and then open a pull request with a description of the applied changes. Obviously you
+   33  can use any other Git hosting provider of your preference.
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/predis/predis/README.md:
+   61  
+   62  It is possible to easily create a [phar](http://www.php.net/manual/en/intro.phar.php) archive from
+   63: the repository just by launching `bin/create-phar`. The generated phar contains a stub defining an
+   64  autoloader function for Predis, so you just need to require the phar to start using the library.
+   65  Alternatively it is possible to generate one single PHP file holding every class like older versions
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/predis/predis/lib/Predis/Connection/PhpiredisConnection.php:
+   31   *
+   32   * For instructions on how to build and install the phpiredis extension, please
+   33:  * consult the repository of the project.
+   34   *
+   35   * The connection parameters supported by this class are:
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/predis/predis/lib/Predis/Connection/PhpiredisStreamConnection.php:
+   31   *
+   32   * For instructions on how to build and install the phpiredis extension, please
+   33:  * consult the repository of the project.
+   34   *
+   35   * The connection parameters supported by this class are:
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/psr/log/README.md:
+    2  =======
+    3  
+    4: This repository holds all interfaces/classes/traits related to
+    5  [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
+    6  
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/swiftmailer/swiftmailer/README:
+    9  Mailing List:  http://groups.google.com/group/swiftmailer
+   10  Bugs:          https://github.com/swiftmailer/swiftmailer/issues
+   11: Repository:    https://github.com/swiftmailer/swiftmailer
+   12  
+   13  Swift Mailer is highly object-oriented by design and lends itself
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/swiftmailer/swiftmailer/doc/installing.rst:
+   17  you want to keep up-to-date with ease.
+   18  
+   19: Swift Mailer's source code is kept in a git repository at github.com so you
+   20: can get the source directly from the repository.
+   21  
+   22  .. note::
+   ..
+   26      button.
+   27  
+   28: Cloning the Repository
+   29  ~~~~~~~~~~~~~~~~~~~~~~
+   30  
+   31: The repository can be cloned from git://github.com/swiftmailer/swiftmailer.git
+   32  using the ``git clone`` command.
+   33  
+   ..
+   35  ``git clone`` command.
+   36  
+   37: To clone the repository:
+   38  
+   39  * Open your favorite terminal environment (command line).
+   ..
+   53      $ cd source_code/
+   54      $ git clone git://github.com/swiftmailer/swiftmailer.git swiftmailer
+   55:     Initialized empty Git repository in /Users/chris/source_code/swiftmailer/.git/
+   56      remote: Counting objects: 6815, done.
+   57      remote: Compressing objects: 100% (2761/2761), done.
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/swiftmailer/swiftmailer/lib/mime_types.php:
+  356      'ipk' => 'application/vnd.shana.informed.package',
+  357      'irm' => 'application/vnd.ibm.rights-management',
+  358:     'irp' => 'application/vnd.irepository.package+xml',
+  359      'iso' => 'application/x-iso9660-image',
+  360      'itp' => 'application/vnd.shana.informed.formtemplate',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/symfony/filesystem/Tests/LockHandlerTest.php:
+   20       * @expectedExceptionMessage Failed to create "/a/b/c/d/e": mkdir(): Permission denied.
+   21       */
+   22:     public function testConstructWhenRepositoryDoesNotExist()
+   23      {
+   24          if (!getenv('USER') || 'root' === getenv('USER')) {
+   ..
+   32       * @expectedExceptionMessage The directory "/" is not writable.
+   33       */
+   34:     public function testConstructWhenRepositoryIsNotWriteable()
+   35      {
+   36          if (!getenv('USER') || 'root' === getenv('USER')) {
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeExtensionGuesser.php:
+  275          'application/vnd.intu.qfx' => 'qfx',
+  276          'application/vnd.ipunplugged.rcprofile' => 'rcprofile',
+  277:         'application/vnd.irepository.package+xml' => 'irp',
+  278          'application/vnd.is-xpr' => 'xpr',
+  279          'application/vnd.isac.fcs' => 'fcs',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/symfony/security-core/Symfony/Component/Security/Core/Authentication/Provider/DaoAuthenticationProvider.php:
+   91              $notFound->setUsername($username);
+   92              throw $notFound;
+   93:         } catch (\Exception $repositoryProblem) {
+   94:             $ex = new AuthenticationServiceException($repositoryProblem->getMessage(), 0, $repositoryProblem);
+   95              $ex->setToken($token);
+   96              throw $ex;
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xliff-core-1.2-strict.xsd:
+ 1226          </xsd:annotation>
+ 1227        </xsd:enumeration>
+ 1228:       <xsd:enumeration value="leveraged-repository">
+ 1229          <xsd:annotation>
+ 1230:           <xsd:documentation>Indicates a translation derived from a translation repository.</xsd:documentation>
+ 1231          </xsd:annotation>
+ 1232        </xsd:enumeration>
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/commands/ControllerCommand.php:
+    6  /**
+    7   * This command renders the package view generator.contoller and also
+    8:  * generator.repository into a file within the application directory
+    9   * in order to save some time.
+   10   *
+   ..
+   78              $this->info("$class.php Successfully created!");
+   79  
+   80:             // Generate repository
+   81:             $filename = 'models/'.str_replace('\\', '/', $model).'Repository.php';
+   82:             $this->generateFile($filename, 'generators.repository', $viewVars);
+   83:             $this->info($model.'Repository.php Successfully created!');
+   84          }
+   85      }
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/Confide.php:
+   19  
+   20      /**
+   21:      * Confide repository instance.
+   22       *
+   23:      * @var \Zizaco\Confide\RepositoryInterface
+   24       */
+   25      public $repo;
+   ..
+   42       * Create a new Confide class.
+   43       *
+   44:      * @param \Zizaco\Confide\RepositoryInterface           $repo
+   45       * @param \Zizaco\Confide\PasswordServiceInterface      $passService
+   46       * @param \Zizaco\Confide\LoginThrottleServiceInterface $loginThrottler
+   ..
+   50       */
+   51      public function __construct(
+   52:         RepositoryInterface       $repo,
+   53          PasswordServiceInterface  $passService,
+   54          LoginThrottleServiceInterface $loginThrottler,
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/EloquentPasswordService.php:
+  116      protected function getConnection()
+  117      {
+  118:         return $this->app['confide.repository']
+  119              ->model()->getConnectionName();
+  120      }
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/EloquentRepository.php:
+    8   * @package Zizaco\Confide
+    9   */
+   10: class EloquentRepository implements RepositoryInterface
+   11  {
+   12      /**
+   ..
+   27  
+   28      /**
+   29:      * Create a new ConfideRepository
+   30       *
+   31       * @param \Illuminate\Foundation\Application $app Laravel application object
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/RepositoryInterface.php:
+    7   * @package Zizaco\Confide
+    8   */
+    9: interface RepositoryInterface
+   10  {
+   11      /**
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/ServiceProvider.php:
+   35      public function register()
+   36      {
+   37:         $this->registerRepository();
+   38  
+   39          $this->registerPasswordService();
+   ..
+   49  
+   50      /**
+   51:      * Register the repository that will handle all the database
+   52       * interaction.
+   53       */
+   54:     protected function registerRepository()
+   55      {
+   56:         $this->app->bind('confide.repository', function ($app) {
+   57:             return new EloquentRepository($app);
+   58          });
+   59      }
+   ..
+  100          $this->app->bind('confide', function ($app) {
+  101              return new Confide(
+  102:                 $app->make('confide.repository'),
+  103                  $app->make('confide.password'),
+  104                  $app->make('confide.throttle'),
+  ...
+  135          return array(
+  136              'confide',
+  137:             'confide.repository',
+  138              'confide.password',
+  139              'confide.throttle',
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/Confide/UserValidator.php:
+   31  {
+   32      /**
+   33:      * Confide repository instance.
+   34       *
+   35:      * @var \Zizaco\Confide\RepositoryInterface
+   36       */
+   37      public $repo;
+   ..
+   64      public function validate(ConfideUserInterface $user, $ruleset = 'create')
+   65      {
+   66:         // Set the $repo as a ConfideRepository object
+   67:         $this->repo = App::make('confide.repository');
+   68  
+   69          // Validate object
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/views/generators/controller.blade.php:
+    1  <?php echo "<?php\n"; ?>{{ $namespace ? ' namespace '.$namespace.';' : '' }}
+    2  
+    3: <?php $repositoryClass = strstr($model, '\\') ? substr($model, 0, -strlen(strrchr($model, '\\'))).'\UserRepository' : 'UserRepository' ?>
+    4  @if ($namespace)
+    5  
+    .
+   40      public function {{ (! $restful) ? 'store' : 'postIndex' }}()
+   41      {
+   42:         $repo = App::make('{{ $repositoryClass }}');
+   43          $user = $repo->signup(Input::all());
+   44  
+   ..
+   89      public function {{ (! $restful) ? 'doLogin' : 'postLogin' }}()
+   90      {
+   91:         $repo = App::make('{{ $repositoryClass }}');
+   92          $input = Input::all();
+   93  
+   ..
+  178      public function {{ (! $restful) ? 'doResetPassword' : 'postReset' }}()
+  179      {
+  180:         $repo = App::make('{{ $repositoryClass }}');
+  181          $input = array(
+  182              'token'                 =>Input::get('token'),
+
+/Users/Roger/vagrant-lamp/sites/helpster.dev/vendor/zizaco/confide/src/views/generators/repository.blade.php:
+   10  
+   11  /**
+   12:  * Class UserRepository
+   13   *
+   14   * This service abstracts some interactions that occurs between Confide and
+   15   * the Database.
+   16   */
+   17: class UserRepository
+   18  {
+   19      /**
+
+236 matches across 57 files
