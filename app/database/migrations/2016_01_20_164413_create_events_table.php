@@ -14,6 +14,7 @@ class CreateEventsTable extends Migration {
 	{
 		Schema::create('events', function($table){
 			$table->increments('event_id');
+			$table->integer('org_id')->unsigned();
 			$table->string('name'); //name of the event
 			$table->date('event_date'); //the actual date of the event
 			$table->string('location'); //location of the event. Name of location or address
@@ -22,7 +23,7 @@ class CreateEventsTable extends Migration {
 			$table->date('signup_deadline'); //deadline for volunteers to sign up
 			$table->timestamps(); //will generate the created at and updated at columns
 
-			$table->foreign('event_id')->references('org_id')->on('organizations')
+			$table->foreign('org_id')->references('id')->on('organizations')
 				->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
