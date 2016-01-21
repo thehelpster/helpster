@@ -1,6 +1,4 @@
-@extend('layout.master')
-
-@section('top-script')
+@extends('layout.master')
 
 @section('content')
 
