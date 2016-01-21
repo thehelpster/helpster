@@ -15,6 +15,11 @@ class EventsController extends BaseController {
 	|
 	*/
 
+	public function showEvents()
+	{
+		return View::make('events.index');
+	}
+
 	public function createEvents()
 	{
 		return View::make('events.create');
