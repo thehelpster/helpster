@@ -40,7 +40,7 @@ Route::get('organization.create', 'OrganizationController@createProfile');
 Route::post('organization.create', 'OrganizationController@storeProfile');
 Route::get('volunteer.edit', 'VolunteerController@editProfile');
 Route::get('organization.edit', 'OrganizationController@editProfile');
-Route::post('organization.edit', 'OrganizationController@postProfiler');
-Route::get('events.edit', 'EventController@editProfile');
-Route::get('events.create', 'EventController@create');
+Route::post('organization.edit', 'OrganizationController@postProfile');
+Route::post('events.edit', 'EventController@postProfile');
+Route::post('events.create', 'EventController@create');
 
