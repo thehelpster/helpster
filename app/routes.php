@@ -11,12 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
+Route::get('about', 'HomeController@about');
 
-Route::get('/navigation', 'HomeController@showNavbar');
 
 
 // Confide routes
@@ -41,6 +38,9 @@ Route::post('organization.create', 'OrganizationController@storeProfile');
 Route::get('volunteer.edit', 'VolunteerController@editProfile');
 Route::get('organization.edit', 'OrganizationController@editProfile');
 Route::post('organization.edit', 'OrganizationController@postProfile');
-Route::post('events.edit', 'EventController@postProfile');
-Route::post('events.create', 'EventController@create');
+Route::post('events.edit', 'EventsController@postProfile');
+Route::post('events.create', 'EventsController@create');
+Route::get('events.index', 'EventsController@showEvents');
+Route::get('organization.index', 'OrganizationsController@showOrganizations');
+
 

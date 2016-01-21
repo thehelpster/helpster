@@ -20,8 +20,9 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
-	public function showNavbar()
+	public function about()
 	{
-		return View::make('partials.navigation');
+		return View::make('about');
 	}
+
 }
