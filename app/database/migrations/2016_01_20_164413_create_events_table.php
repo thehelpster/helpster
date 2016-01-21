@@ -3,6 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+//Events table where all the events that are created by the organization will be recorded
 class CreateEventsTable extends Migration {
 
 	/**
@@ -13,8 +14,8 @@ class CreateEventsTable extends Migration {
 	public function up()
 	{
 		Schema::create('events', function($table){
-			$table->increments('event_id');
-			$table->integer('org_id')->unsigned();
+			$table->increments('id'); //id of the event
+			$table->integer('org_id')->unsigned(); //org id which will associate the event to the organization
 			$table->string('name'); //name of the event
 			$table->date('event_date'); //the actual date of the event
 			$table->string('location'); //location of the event. Name of location or address
@@ -36,7 +37,7 @@ class CreateEventsTable extends Migration {
 	public function down()
 	{	
 		Schema::table('events', function(Blueprint $table){
-			$table->dropForeign('events_event_id_foreign');
+			$table->dropForeign('events_org_id_foreign');
 		});
 		Schema::drop('events');
 	}
