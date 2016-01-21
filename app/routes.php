@@ -42,5 +42,6 @@ Route::post('events.edit', 'EventsController@postProfile');
 Route::post('events.create', 'EventsController@create');
 Route::get('events.index', 'EventsController@showEvents');
 Route::get('organization.index', 'OrganizationsController@showOrganizations');
-
+Route::get('volunteer.login', 'UsersController@makeLogin');
+Route::get('contact', 'HomeController@contact');
 
