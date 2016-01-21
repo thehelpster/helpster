@@ -184,6 +184,10 @@ class UsersController extends Controller
                 ->with('error', $error_msg);
         }
     }
+    public function makeLogin()
+    {
+        return View::make('volunteer.login');
+    }
 
     /**
      * Log the user out of the application.
