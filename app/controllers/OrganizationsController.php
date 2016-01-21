@@ -15,6 +15,11 @@ class OrganizationsController extends BaseController {
 	|
 	*/
 
+	public function showOrganizations()
+	{
+		return View::make('organization.index');
+	}
+
 	public function createOrganization()
 	{
 		return View::make('organization.create');
