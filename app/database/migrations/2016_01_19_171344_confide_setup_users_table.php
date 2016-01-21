@@ -16,12 +16,13 @@ class ConfideSetupUsersTable extends Migration
             $table->string('password');
             $table->string('first_name', 100);
             $table->string('last_name', 100);
-            $table->integer('age', 3);
-            $table->integer('zip', 5);
-            $table->string('Gender', 2);->nullable();
+            $table->date('birthday');
+            $table->integer('zip');
+            $table->string('gender', 2)->nullable();
             $table->string('confirmation_code');
             $table->string('remember_token')->nullable();
             $table->boolean('confirmed')->default(false);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
 

@@ -13,13 +13,16 @@ class CreateOrganizationsTable extends Migration {
 	public function up()
 	{
 		Schema::create('organizations', function($table){
-			$table->increments('id');
+			$table->increments('org_id');
 			$table->string('name', 250);
 			$table->date('date_established');
 			$table->text('description');
-			$table->string('website');
+			$table->string('website');	
 			$table->string('image')->nullable();
 			$table->timestamps();
+
+			$table->foreign('org_id')->references('id')->on('users')
+				->onUpdate('cascade')->onDelete('cascade');
 
 
 		});
@@ -31,8 +34,11 @@ class CreateOrganizationsTable extends Migration {
 	 * @return void
 	 */
 	public function down()
-	{
-		//
+	{	
+		Schema::table('organizations', function(Blueprint $table){
+			$table->dropForeign('organizations_org_id_foreign');
+		});
+		Schema::drop('organizations');
 	}
 
 }
