@@ -1,41 +1,32 @@
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container fluid">
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown">Volunteers<b class="caret"></b></button>
-                <ul class="nav navbar-nav dropdown-menu">
-                    <li><a href="#">Search Volunteers!</a></li>
-                    <li><a href="#">Search Volunteers!</a></li>
+    <div class="header container">
+      <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
+        <a rel="home" href="index.html">
+          <img src="img/logo.png" width="200" alt="logo">
+        </a>
+      </div>
+    </div>
+        <div class="navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="selected"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Sevices</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+          <li class= "hidden-xs hidden-sm">
+            <a rel="home" href="index.html"><img class="logo" src="img/logo.png" width="200" alt="logo"></a>
+          </li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
                 </ul>
+            </div>
         </div>
-    </div>
-     <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown">Organizations<b class="caret"></b></button>
-                <ul class="nav navbar-nav dropdown-menu">
-                    <li><a href="#">Search Organizations!</a></li>
-                    <li><a href="#">Search Organizations!</a></li>
-                </ul>
-        </div>
-    </div>
-    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-        <ul class="nav navbar-nav">
-            @if (Auth::user())
-            <li><a href="#">Log Out</a></li>
-            @else
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
-            @endif
-    </ul>       
-    </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
