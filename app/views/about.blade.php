@@ -19,7 +19,7 @@
                   </div>
 
                     <h3>Organizations</h3>
-                    <p>If you are an established non-profit organization and have work that needs to be done but can’t find the help, we are here for you. Our database of volunteers will expand the globe and you will be able to identify your volunteers by your needs.</p>
+                    <p>If you are an established non-profit organization and have work that needs to be done but can’t find the help, we are here for you. Our database of volunteers expands the globe. You will be able to identify your volunteers by your needs.</p>
                   </div>
 
                 </div><!-- END ONE THIRD COLUMNS -->

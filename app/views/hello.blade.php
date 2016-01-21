@@ -46,7 +46,7 @@
           <i class="fa fa-3x fa-heart"></i>
         </div>
       <h1 class="main-text">Show your Love for the Humanity</h1>
-      <p class="text-center sub-text"><em class="first-line">Lorem ipsum dolor sit amet, consectetur adipisiciSng elit, sed do eiusmod tempor </em><em class="next-line"> incididunt ut labore et dolore magna aliqua.A sed do eiusmod tempor incididunt ut labore et dolore magna.</em></p>
+      <p class="text-center sub-text">Helpster is designed to serve communities in the most direct way. If you know someone who needs help - nominate them, if you are an organization who needs volunteers - you will find them here. If you have the heart of a servant, you will find people who need your help here.</p>
     </div>
 
     <div class="divider col-sm-12 col-xs-12 col-md-12">
