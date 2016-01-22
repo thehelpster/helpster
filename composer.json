@@ -7,7 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"zizaco/confide": "~4.3",
-		"bbatsche/entrust": "~2.0"
+		"bbatsche/entrust": "~2.0",
+		"nesbot/carbon": "~1.14"
 	},
 	"require-dev":{
 		"barryvdh/laravel-debugbar": "~1.8",
