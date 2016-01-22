@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="divider col-sm-12 col-xs-12 col-md-12">
-        <div class="header-text"> Our <span>Organizations</span></div>
+        <div class="header-text"><span>Organizations You Can Help</span></div>
     </div>
 
    <!-- Page Content -->
@@ -14,9 +14,9 @@
 
         <div class="row">
 
-            <div class="col-lg-12">
+            {{-- <div class="col-lg-12">
                 <h1 class="page-header">Thumbnail Gallery</h1>
-            </div>
+            </div> --}}
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">

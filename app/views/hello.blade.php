@@ -20,13 +20,13 @@
 		    <div class="item">
 		      <img src="img/slide2.jpg" alt="">
 		      <div class="carousel-caption">
-		        Be a Donator
+		        Have Your Organization Join
 		      </div>
 		    </div>
 		    <div class="item">
 		      <img src="img/slide1.jpg" alt="">
 		      <div class="carousel-caption">
-		        Be a volunteer
+		        Be a Helpster
 		      </div>
 		    </div>
 		  </div>
@@ -45,12 +45,12 @@
         <div class="heading-icon">
           <i class="fa fa-3x fa-heart"></i>
         </div>
-      <h1 class="main-text">Show your Love for the Humanity</h1>
-      <p class="text-center sub-text"><em class="first-line">Lorem ipsum dolor sit amet, consectetur adipisiciSng elit, sed do eiusmod tempor </em><em class="next-line"> incididunt ut labore et dolore magna aliqua.A sed do eiusmod tempor incididunt ut labore et dolore magna.</em></p>
+      <h1 class="main-text">Helpster</h1>
+      <p class="text-center sub-text"><em class="first-line">Helping you help others</p>
     </div>
 
     <div class="divider col-sm-12 col-xs-12 col-md-12">
-      <div class="header-text"><span>Blog</span> News</div>
+      <div class="header-text"><span>Events</span></div>
     </div>
 
 			<section class="blog">

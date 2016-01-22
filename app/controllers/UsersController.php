@@ -189,6 +189,11 @@ class UsersController extends Controller
         return View::make('volunteer.login');
     }
 
+    public function signup()
+    {
+        return View::make('volunteer.signup');
+    }
+
     /**
      * Log the user out of the application.
      *
