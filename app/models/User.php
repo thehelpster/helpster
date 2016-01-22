@@ -21,6 +21,19 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	 */
 	protected $table = 'users';
 
+	protected $fillable = array('email', 'password', 'first_name', 'last_name', 'birthday', 'zip', 'gender', 'image');
+
+	public static $rules = array(
+		'email' => 'required|email',
+		'password' => 'required|pasword',
+		'first_name' => 'required|min:2|max:100',
+		'last_name' => 'required|min:2|max:100',
+		'birthday' => 'required',
+		'zip' => 'required|max:5',
+		'gender' => 'max:1',
+		'image' => 'image'
+	);
+	
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -28,4 +41,8 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	public function organizations()
+	{
+		return $this->hasMany('Organization');
+	}
 }
