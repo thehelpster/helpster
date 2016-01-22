@@ -20,13 +20,13 @@
 		    <div class="item">
 		      <img src="img/slide2.jpg" alt="">
 		      <div class="carousel-caption">
-		        Be a Donator
+		        Have Your Organization Join
 		      </div>
 		    </div>
 		    <div class="item">
 		      <img src="img/slide1.jpg" alt="">
 		      <div class="carousel-caption">
-		        Be a volunteer
+		        Be a Helpster
 		      </div>
 		    </div>
 		  </div>
@@ -45,12 +45,13 @@
         <div class="heading-icon">
           <i class="fa fa-3x fa-heart"></i>
         </div>
+
       <h1 class="main-text">Show your Love for the Humanity</h1>
       <p class="text-center sub-text">Helpster is designed to serve communities in the most direct way. If you know someone who needs help - nominate them, if you are an organization who needs volunteers - you will find them here. If you have the heart of a servant, you will find people who need your help here.</p>
     </div>
 
     <div class="divider col-sm-12 col-xs-12 col-md-12">
-      <div class="header-text"><span>Blog</span> News</div>
+      <div class="header-text"><span>Events</span></div>
     </div>
 
 			<section class="blog">
