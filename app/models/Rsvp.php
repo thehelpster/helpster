@@ -1,8 +1,8 @@
 <?php
 
-class Attendance extends BaseModel
+class Rsvp extends BaseModel
 {
-	protected $table = 'attendances';
+	protected $table = 'rsvps';
 
 	protected $fillable = array('response');
 
@@ -11,6 +11,14 @@ class Attendance extends BaseModel
 		//event id required
 	);
 
-	
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
+
+	public function event()
+	{
+		return $this->belongsTo('Event');
+	}
 
 }
