@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('OrganizationsTableSeeder');
 		$this->call('EventsTableSeeder');
 		$this->call('CommentsTableSeeder');
-		$this->call('AttedanceTableSeeder');
+		$this->call('RsvpsTableSeeder');
 
 	}
 
