@@ -34,13 +34,13 @@
                     @endif
                     <li>
                         @if(!Auth::user())
-                        <a href="{{{ action('UsersController@signup')}}}">Sign Up</a></li>
+                        <a href="{{{ action('UsersController@create')}}}">Sign Up</a></li>
                         @endif
                     <li>
                          @if(!Auth::user())
-                            <a href="{{{ action('UsersController@makeLogin')}}}">Login</a></li>
+                            <a href="{{{ action('UsersController@login')}}}">Login</a></li>
                          @else
-                         <a href="{{{ action('UsersController@Logout')}}}">Logout</a>
+                         <a href="{{{ action('UsersController@logout')}}}">Logout</a>
                         @endif
                     <li><a href="{{{ action('HomeController@contact')}}}">Contact</a></li>
                 </ul>

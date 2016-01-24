@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        return View::make('users.signup');
     }
 
     /**
@@ -65,7 +65,7 @@ class UsersController extends Controller
         if (Confide::user()) {
             return Redirect::to('/');
         } else {
-            return View::make(Config::get('confide::login_form'));
+            return View::make('users.login');
         }
     }
 
@@ -184,15 +184,15 @@ class UsersController extends Controller
                 ->with('error', $error_msg);
         }
     }
-    public function makeLogin()
-    {
-        return View::make('volunteer.login');
-    }
+    // public function makeLogin()
+    // {
+    //     return View::make('volunteer.login');
+    // }
 
-    public function signup()
-    {
-        return View::make('volunteer.signup');
-    }
+    // public function signup()
+    // {
+    //     return View::make('volunteer.signup');
+    // }
 
     /**
      * Log the user out of the application.

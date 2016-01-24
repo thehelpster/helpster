@@ -41,11 +41,12 @@ Route::get('users/logout', 'UsersController@logout');
 // Route::post('events.edit', 'EventsController@postProfile');
 // Route::post('events.create', 'EventsController@create');
 
-// Route::get('events.index', 'EventsController@showEvents');
-// Route::get('organization.index', 'OrganizationsController@showOrganizations');
+Route::get('/events', 'EventsController@showEvents');
+Route::get('organization', 'OrganizationsController@showOrganizations');
+// Route::get('signup', 'UsersController@signup');
 // Route::get('volunteer.login', 'UsersController@makeLogin');
-// Route::get('contact', 'HomeController@contact');
+Route::get('contact', 'HomeController@contact');
 
 Route::resource('/events', 'EventsController');
-Route::resource('/volunteer', 'UsersController');
+Route::resource('/users', 'UsersController');
 Route::resource('/organization', 'OrganizationsController');

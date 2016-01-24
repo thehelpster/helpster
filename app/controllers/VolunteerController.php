@@ -25,14 +25,14 @@ class VolunteerController extends BaseController {
 		return View::make('volunter.edit');
 	}
 
-	public function storeProfile()
-	{
-		$post = new Post();
+	// public function storeProfile()
+	// {
+	// 	$post = new Post();
 
-		Log::info('This is some useful information.');
+	// 	Log::info('This is some useful information.');
 
-		return $this->validateAndSave($post);
-	}
+	// 	return $this->validateAndSave($post);
+	// }
 
 	public function validateAndSave($post)
 	{

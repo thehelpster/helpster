@@ -1,13 +1,10 @@
 @extends('layouts.master')
-@section('top-script')
-	 <link rel="stylesheet" href="css/helpster.css">
-@stop
 
 @section('content')
 <div class="container">
 	<div class="row">
         <div class="col-md-6 col-md-offset-4"> 
-			{{-- {{ Form::open(array('action' => 'HomeController@postLogin')) }} --}}
+			{{ Form::open(array('action' => 'UsersController@store')) }}
 			<h3>Sign Up Form</h3>
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}
@@ -47,7 +44,7 @@
 			 	<button type="submit" class="btn btn-primary">Sign Up</button>
 			 	<hr>
 			 </div>
-				{{-- {{ Form::close() }} --}}
+				{{ Form::close() }}
 		</div>	
 	</div>
 </div>
