@@ -21,6 +21,8 @@ class CreateCommentsTable extends Migration {
 				->onUpdate('cascade')->onDelete('cascade'); //references the user id from the id on the users table
 			$table->foreign('event_id')->references('id')->on('events')
 				->onUpdate('cascade')->onDelete('cascade'); //references the event id from the id on the events table
+			
+			$table->timestamps();
 		});
 	}
 

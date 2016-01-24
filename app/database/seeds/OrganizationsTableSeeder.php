@@ -9,7 +9,7 @@ class OrganizationsTableSeeder extends Seeder {
         $organization->date_established = '2013-05-19';
         $organization->description = 'Codeup offers elite learn to code bootcamps in San Antonio, Texas.';
         $organization->website = 'http://codeup.com';
-        $organization->confirmed = 1;
+        $organization->user_id = 1;
 
         $organization->save();
     }

@@ -21,13 +21,13 @@ class VolunteerEvent extends BaseModel
 		return $this->belongsTo('Organization');
 	}
 
-	public function events()
+	public function comments()
 	{
-		return $this->belongsToMany('User', 'comments');
+		return $this->hasMany('Comment');
 	}
 
-	public function attendances()
+	public function rsvps()
 	{
-		return $this->belongsToMany('User', 'event_user')
+		return $this->belongsToMany('User', 'rsvps');
 	}
 }

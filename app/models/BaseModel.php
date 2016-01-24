@@ -7,7 +7,7 @@ class BaseModel extends Eloquent
 
 	// public $now = Carbon::now('America/Chicago');
 
-	// public $today = Carbon::today();
+	// public $today = Carbon::today();	
 
 	public function getCreatedAtAttribute($value)
 	{
