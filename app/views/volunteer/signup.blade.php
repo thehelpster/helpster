@@ -8,7 +8,7 @@
 	<div class="row">
         <div class="col-md-6 col-md-offset-4"> 
 			{{-- {{ Form::open(array('action' => 'HomeController@postLogin')) }} --}}
-			
+			<h3>Sign Up Form</h3>
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}
 				{{ Form::text('email', null, array('placeholder'=> 'Type email here', 'class'=>'form-control')) }} 

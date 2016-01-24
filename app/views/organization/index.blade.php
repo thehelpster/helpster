@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section ('top-script')
 <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/helpster.css">
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
 @stop
 

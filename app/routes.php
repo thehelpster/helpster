@@ -28,24 +28,24 @@ Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', 'UsersController@logout');
 
 
-Route::get('signup', 'UsersController@signup');
-Route::post('signup', 'UsersController@store');
+// Route::get('volunteer.create', 'VolunteerController@createProfile');
+// Route::post('volunteer.create', 'VolunteerController@storeProfile');
 
-Route::get('volunteer.create', 'VolunteerController@createProfile');
-Route::post('volunteer.create', 'VolunteerController@storeProfile');
+// Route::get('organization.create', 'OrganizationController@createProfile');
+// Route::post('organization.create', 'OrganizationController@storeProfile');
 
-Route::get('organization.create', 'OrganizationController@createProfile');
-Route::post('organization.create', 'OrganizationController@storeProfile');
+// Route::get('volunteer.edit', 'VolunteerController@editProfile');
+// Route::get('organization.edit', 'OrganizationController@editProfile');
 
-Route::get('volunteer.edit', 'VolunteerController@editProfile');
-Route::get('organization.edit', 'OrganizationController@editProfile');
+// Route::post('organization.edit', 'OrganizationController@postProfile');
+// Route::post('events.edit', 'EventsController@postProfile');
+// Route::post('events.create', 'EventsController@create');
 
-Route::post('organization.edit', 'OrganizationController@postProfile');
-Route::post('events.edit', 'EventsController@postProfile');
-Route::post('events.create', 'EventsController@create');
+// Route::get('events.index', 'EventsController@showEvents');
+// Route::get('organization.index', 'OrganizationsController@showOrganizations');
+// Route::get('volunteer.login', 'UsersController@makeLogin');
+// Route::get('contact', 'HomeController@contact');
 
-Route::get('events.index', 'EventsController@showEvents');
-Route::get('organization.index', 'OrganizationsController@showOrganizations');
-Route::get('volunteer.login', 'UsersController@makeLogin');
-Route::get('contact', 'HomeController@contact');
-
+Route::resource('/events', 'EventsController');
+Route::resource('/volunteer', 'UsersController');
+Route::resource('/organization', 'OrganizationsController');
