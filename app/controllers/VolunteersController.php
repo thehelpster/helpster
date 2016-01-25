@@ -103,14 +103,16 @@ class VolunteersController extends \BaseController {
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
-			$organization->name = Input::get('name');
-			$organization->description = Input::get('description');
-			$organization->image = Input::get('image');
-			$organization->website = Input::get('website');
-			$organization->user_id = Input::get('user_id');
+			$volunteer->email = Input::get('email');
+			$volunteer->first_name = Input::get('first_name');
+			$volunteer->last_name = Input::get('last_name');
+			$volunteer->password = Input::get('password');
+			$volunteer->birthday = Input::get('birthday');
+			$volunteer->gender = Input::get('gender');
+			$volunteer->zip = Input::get('zip');
 
 
-			$result = $organization->save();
+			$result = $volunteer->save();
 
 			if($result) {
 				return Redirect::action('VolunteersController@show', $volunteer->id);
