@@ -15,24 +15,24 @@
 				{{ Form::text('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
 			</div>
 			<div class="form-group">
-			    {{ Form::label('password', 'Re-type Password') }}
-				{{ Form::text('password', null, array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
+			    {{ Form::label('password_confirmation', 'Confirm Password') }}
+				{{ Form::text('password_confirmation', null, array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
-			    {{ Form::label('firstname', 'First name') }}
-				{{ Form::text('firstname', null, array('placeholder'=> 'Type first name here', 'class'=>'form-control')) }} 
+			    {{ Form::label('first_name', 'First name') }}
+				{{ Form::text('first_name', null, array('placeholder'=> 'Type first name here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
-			    {{ Form::label('lastname', 'Last name') }}
-				{{ Form::text('lastname', null, array('placeholder'=> 'Type last name here', 'class'=>'form-control')) }} 
+			    {{ Form::label('last_name', 'Last name') }}
+				{{ Form::text('last_name', null, array('placeholder'=> 'Type last name here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
-			    {{ Form::label('zipcode', 'Zip code') }}
-				{{ Form::text('zipcode', null, array('placeholder'=> 'Type zip code here', 'class'=>'form-control')) }} 
+			    {{ Form::label('zip', 'Zip code') }}
+				{{ Form::text('zip', null, array('placeholder'=> 'Type zip code here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
-			    {{ Form::label('birthdate', 'Birthdate') }}
-				{{ Form::input('date', 'birthdate', null, array('placeholder'=> 'Type your birth date here', 'class'=>'form-control')) }} 
+			    {{ Form::label('birthday', 'Birthdate') }}
+				{{ Form::input('date', 'birthday', null, array('placeholder'=> 'Type your birth date here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
 			    {{ Form::label('gender', 'Male') }}

@@ -1,60 +1,119 @@
 <?php
 
-class OrganizationsController extends BaseController {
+class OrganizationsController extends \BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
-	public function showOrganizations()
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
 	{
 		return View::make('organization.index');
 	}
 
-	public function createOrganization()
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
 	{
 		return View::make('organization.create');
 	}
 
-	public function editOrganization($id)
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
 	{
-		return View::make('organization.edit');
-	}
-	public function storeProfile()
-	{
-		$post = new Post();
+		$organization = new Organization();
 
 		Log::info('This is some useful information.');
 
-		return $this->validateAndSave($post);
+		return $this->validateAndSave($organization);
 	}
 
-	public function validateAndSave($post)
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
 	{
-	    $validator = Validator::make(Input::all(), Post::$rules);
+		$organization = Organization::find($id);
+		
+		if(!$organization){
+			App::abort(404);
+		}
+		return View::make('organizations.show')->with('organization', $organization);
+	}
+
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		return View::make('organization.edit');
+	}
+
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$organization = Organization::find($id);
+
+		return $this->validateAndSave($organization);	
+	}
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$organization = Organization::find($id);
+		$organization->delete();
+		Session::flash('successMessage', 'Your delete was successful.');
+		return Redirect::action('OrganizationsController@index');
+	}
+
+	public function validateAndSave($organization)
+	{
+	    $validator = Validator::make(Input::all(), Organization::$rules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
-			$post->title = Input::get('title');
-			$post->content = Input::get('content');
-			$post->user_id = Auth::id();
+			$organization->name = Input::get('name');
+			$organization->description = Input::get('description');
+			$organization->image = Input::get('image');
+			$organization->website = Input::get('website');
+			$organization->user_id = Input::get('user_id');
 
-			$userEmail = Auth::user()->email;
 
-			$result = $post->save();
+			$result = $organization->save();
 
 			if($result) {
-				return Redirect::action('OrganizationsController@show', $post->id);
+				return Redirect::action('OrganizationsController@show', $organization->id);
 			} else {
 				return Redirect::back()->withInput();
 			}

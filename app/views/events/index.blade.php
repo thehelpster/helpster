@@ -29,7 +29,7 @@
                   <button class="button-info">Register Now</button>
               </div>
             </div>
-            <div class="blog-event">
+            <div class="blog-event"> 
               <div class="featured-img">
                   <img src="images/clients/2.jpg" width="150" alt="">
               </div>
