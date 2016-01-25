@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::get('about', 'HomeController@about');
+Route::get('contact', 'HomeController@contact');
 
 
 // Confide routes
@@ -30,8 +31,7 @@ Route::get('users/logout', 'UsersController@logout');
 
 
 
-Route::get('contact', 'HomeController@contact');
 
 Route::resource('/events', 'EventsController');
-Route::resource('/users', 'UsersController');
 Route::resource('/organization', 'OrganizationsController');
+Route::resource('/users', 'UsersController');

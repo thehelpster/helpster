@@ -4,6 +4,8 @@
 <div class="container">
 	<div class="row">
         <div class="col-md-6 col-md-offset-4"> 
+
+        {{var_dump (Input::old())}}
 		{{ Form::open(array('action' => 'UsersController@doLogin')) }}
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}

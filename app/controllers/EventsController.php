@@ -112,5 +112,24 @@ class EventsController extends \BaseController {
 		}
 
 	}
+	public static function getEvents($events)
+    {
+        $events = VolunteerEvent::all();
+        
+        // find the category id
+        foreach ($events as $event) {
+            if ($name == $event['name']) {
+                return $event['id'];
+            }
+        }
+
+        // category wasn't found, so we need to insert one
+        $query = 'INSERT INTO categories (category_name) VALUES (:category_name)';
+        $stmt = static::$dbc->prepare($query);
+        $stmt->bindValue(":category_name", $categoryName, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return self::getCategoryId($categoryName);
+    }
 
 }
