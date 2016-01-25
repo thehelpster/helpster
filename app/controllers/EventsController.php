@@ -9,7 +9,9 @@ class EventsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('events.index');
+		$events = VolunteerEvent::paginate(5);
+
+		return View::make('events.index')->with('events', $events);
 	}
 
 
@@ -31,11 +33,11 @@ class EventsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$post = new Post();
+		$event = new Event();
 
 		Log::info('This is some useful information.');
 
-		return $this->validateAndSave($post);
+		return $this->validateAndSave($event);
 	}
 
 
@@ -47,7 +49,7 @@ class EventsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$event = Event::find($id);
+		$event = VolunteerEvent::find($id);
 		
 		if(!$event){
 			App::abort(404);
@@ -76,7 +78,9 @@ class EventsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$event = Event::find($id);
+
+		return $this->validateAndSave($event);
 	}
 
 
@@ -112,24 +116,26 @@ class EventsController extends \BaseController {
 		}
 
 	}
-	public static function getEvents($events)
-    {
-        $events = VolunteerEvent::all();
-        
-        // find the category id
-        foreach ($events as $event) {
-            if ($name == $event['name']) {
-                return $event['id'];
-            }
-        }
+	
+	public function register($id)
+	{
+		$event = VolunteerEvent::find($id);
 
-        // category wasn't found, so we need to insert one
-        $query = 'INSERT INTO categories (category_name) VALUES (:category_name)';
-        $stmt = static::$dbc->prepare($query);
-        $stmt->bindValue(":category_name", $categoryName, PDO::PARAM_STR);
-        $stmt->execute();
+		return View::make('events.register', array('event'=>$event));
+	}
 
-        return self::getCategoryId($categoryName);
-    }
+	public function makeEventReservation($id)
+	{
+		$reservation = new RSVP;
 
+		$reservation->user_id=Auth::user()->id;
+		$reservation->event_id=$id;
+		$reservation->response= Input::get('response');
+
+		$reservation->save();
+		Session::flash('successMessage', 'Your reservationhas been saved');
+		
+		return Redirect::action('EventsController@index');
+
+	}
 }
