@@ -1,6 +1,6 @@
 <?php
 
-class OrganizationsController extends \BaseController {
+class VolunteersController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('organization.index');
+		return View::make('volunteer.index');
 	}
 
 
@@ -20,7 +20,7 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('organization.create');
+		return View::make('volunteer.create');
 	}
 
 
@@ -31,11 +31,10 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$organization = new Organization();
+		$volunteer = new Volunteer();
+		Log::info('This is some useful information.', Input::all());
 
-		Log::info('This is some useful information.');
-
-		return $this->validateAndSave($organization);
+		return $this->validateAndSave($volunteer);
 	}
 
 
@@ -47,12 +46,13 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$organization = Organization::find($id);
+		$volunteer = Volunteer::find($id);
 		
-		if(!$organization){
+		if(!$volunteer){
 			App::abort(404);
 		}
-		return View::make('organizations.show')->with('organization', $organization);
+		return View::make('users.show')->with('volunteer', $volunteer);
+	}
 	}
 
 
@@ -64,7 +64,7 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('organization.edit');
+		return View::make('volunteer.edit');
 	}
 
 
@@ -76,9 +76,9 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$organization = Organization::find($id);
+		$volunteer = Volunteer::find($id);
 
-		return $this->validateAndSave($organization);	
+		return $this->validateAndSave($volunteer);	
 	}
 
 
@@ -90,15 +90,15 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$organization = Organization::find($id);
-		$organization->delete();
+		$volunteer = Volunteer::find($id);
+		$volunteer->delete();
 		Session::flash('successMessage', 'Your delete was successful.');
-		return Redirect::action('OrganizationsController@index');
+		return Redirect::action('VolunteersController@index');
 	}
 
-	public function validateAndSave($organization)
+	public function validateAndSave($volunteer)
 	{
-	    $validator = Validator::make(Input::all(), Organization::$rules);
+	    $validator = Validator::make(Input::all(), Volunteer::$rules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
@@ -113,7 +113,7 @@ class OrganizationsController extends \BaseController {
 			$result = $organization->save();
 
 			if($result) {
-				return Redirect::action('OrganizationsController@show', $organization->id);
+				return Redirect::action('VolunteersController@show', $volunteer->id);
 			} else {
 				return Redirect::back()->withInput();
 			}

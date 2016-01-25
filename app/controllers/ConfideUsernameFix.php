@@ -2,7 +2,7 @@
 
 use Zizaco\Confide\ConfideUserInterface;
 
-class ConfideValidatorFix extends Zizaco\Confide\UserValidator {
+class ConfideValidatorFix extends UserValidator {
 
     public $rules = [
         'create' => [

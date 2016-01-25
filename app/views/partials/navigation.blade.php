@@ -20,17 +20,17 @@
                     <li><a href="{{{action('HomeController@about')}}}">About</a></li>
                    @endif
                     @if(Request::is('events.index'))
-                    <li class="selected"><a href="{{{ action('EventsController@showEvents')}}}">Events</a></li>
+                    <li class="selected"><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @else
-                    <li><a href="{{{ action('EventsController@showEvents')}}}">Events</a></li>
+                    <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
           <li class= "hidden-xs hidden-sm">
             {{-- <a rel="home" href="index.html"><img class="logo" src="img/logo.png" width="200" alt="logo"></a> --}}
           </li>
                     @if(Request::is('organization.index'))
-                    <li class="selected"><a href="{{{ action('OrganizationsController@showOrganizations')}}}">Organizations</a></li>
+                    <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @else
-                    <li><a href="{{{ action('OrganizationsController@showOrganizations')}}}">Organizations</a></li>
+                    <li><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @endif
                     <li>
                         @if(!Auth::user())
