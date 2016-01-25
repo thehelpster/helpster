@@ -24,8 +24,9 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	protected $fillable = array('email', 'password', 'first_name', 'last_name', 'birthday', 'zip', 'gender', 'image');
 
 	public static $rules = array(
-		'email' => 'required|email',
-		'password' => 'required|pasword',
+		'email' => 'required|email|unique',
+		'username' => 'unique',
+		'password' => 'required|password',
 		'first_name' => 'required|min:2|max:100',
 		'last_name' => 'required|min:2|max:100',
 		'birthday' => 'required',
