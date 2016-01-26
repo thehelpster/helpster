@@ -33,3 +33,4 @@ Route::post('events/register/{id}', 'EventsController@makeEventReservation');
 
 Route::resource('/events', 'EventsController');
 Route::resource('/organization', 'OrganizationsController');
+Route::resource('/users', "UsersController");
