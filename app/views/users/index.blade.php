@@ -6,13 +6,13 @@
 <div class="row">
     <div class="col-md-6">
     	<div class="row">
-    		<div class="col-sm-4">
-    			<img class="img-responsive img-rounded" src="{{{ Auth::user()->image }}}">
-    		</div>
     	</div>
         @if (Auth::check())
+    		<div class="col-sm-4">
+    			<img class="img-responsive img-rounded" src="/img/{{{ Auth::user()->image }}}">
+    		</div>
         <h1>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h1>
-        <button class="btn btn-primary"><a href="{{{ action('UsersController@edit', Auth::user()->id) }}}">Edit Profile</a></button>
+        <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
     	<h3>{{{ Auth::user()->quote }}}</h3>
         <header>
             <h2>About {{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h2>

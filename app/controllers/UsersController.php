@@ -149,7 +149,9 @@ class UsersController extends \BaseController {
             $user->gender = Input::get('gender');
             $user->quote = Input::get('quote');
             $user->about = Input::get('about');
-
+            $image = Input::file('image');
+            $user->image = $image->getClientOriginalName();
+            $image->move(__DIR__ . '/../../public/img');
 
 			$result = $user->save();
 
