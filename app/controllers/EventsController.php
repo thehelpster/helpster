@@ -66,7 +66,9 @@ class EventsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('events.edit');
+		$event = VolunteerEvent::find($id);
+
+		return View::make('events.edit', compact('event'));
 	}
 
 
@@ -78,7 +80,7 @@ class EventsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$event = Event::find($id);
+		$event = VolunteerEvent::find($id);
 
 		return $this->validateAndSave($event);
 	}
