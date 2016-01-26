@@ -1428,4 +1428,10 @@ footer{
     .footer-bottom-content nav a {
     	margin-right: 30px;
     }
+    .background {
+    	width: 100%;
+    }
 }
+    hr {
+   		border-top: 1px solid #0E0D0D;
+    }
