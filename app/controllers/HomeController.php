@@ -29,4 +29,20 @@ class HomeController extends BaseController {
 		return View::make('contact');
 	}
 
+	public function profile()
+	{
+		$user = Auth::user();
+		return View::make('users.profile')->with('user', $user);
+	}
+
+	// public function __construct()
+	// {
+	// 	$this->beforeFilter('auth', array("only"=>array("profile")));
+	// }
+
+	public function edit($id)
+	{
+		return View::make('users.edit')->with('user', $user);
+	}
+
 }
