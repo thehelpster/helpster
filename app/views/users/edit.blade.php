@@ -3,7 +3,7 @@
 @section('content')
 {{-- Need updates columns in 'users' table --}}
 <div class="site-heading">
-    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+    {{ Form::model($post, array('action' => array('UsersController@update', $post->id), 'method' => 'PUT')) }}
 
       <div class="form-group {{ ($errors->has('title')) ? 'has-error' : '' }}">
         {{ $errors->first('first_name', '<span class="help-block">:message</span>') }}
