@@ -51,7 +51,7 @@
                           @if(Request::is('users'))
                          <li class="selected"><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
                           @else
-                          <li><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
+                          <li><a href="{{{ action('UsersController@show')}}}">Profile</a></li>
                           @endif
                          <li><a href="{{{ action('UsersController@logout')}}}">Logout</a></li>
                         @endif
