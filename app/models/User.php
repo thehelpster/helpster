@@ -24,6 +24,7 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	protected $fillable = array('email', 'password', 'first_name', 'last_name', 'birthday', 'zip', 'gender', 'image');
 
 	public static $rules = array(
+<<<<<<< HEAD
 		'email' => 'required|email|unique:users',
 		'username' => 'unique:users',
 		'password'   => '
@@ -31,9 +32,14 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
                 min:6|
                 confirmed',
         'password_confirmation' => 'required|same:password',
+=======
+		// 'email' => 'required|email|unique',
+		// 'username' => 'unique',
+		// 'password' => 'required|password',
+>>>>>>> d31e988efaa649fe54adf91b20ef8bc1969035d5
 		'first_name' => 'required|min:2|max:100',
 		'last_name' => 'required|min:2|max:100',
-		'birthday' => 'required',
+		// 'birthday' => 'required',
 		'zip' => 'required|max:5',
 		'gender' => 'max:1',
 		'image' => 'image'
