@@ -9,7 +9,9 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('organization.index');
+		$organizations = Organization::paginate(5);
+
+		return View::make('organization.index')->with('organizations', $organizations);
 	}
 
 
@@ -52,7 +54,7 @@ class OrganizationsController extends \BaseController {
 		if(!$organization){
 			App::abort(404);
 		}
-		return View::make('organizations.show')->with('organization', $organization);
+		return View::make('organization.show')->with('organization', $organization);
 	}
 
 

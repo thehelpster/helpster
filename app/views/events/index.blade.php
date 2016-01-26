@@ -5,21 +5,6 @@
         <div class="header-text"> <span>Our Events</span></div>
     </div>
 
-    {{-- <div id="exTab2" class="col-md-8 col-lg-7 col-lg-offset-1 col-md-offset-1">
-      <ul class="nav nav-tabs">
-            <li class="active">
-              <a  href="#1" data-toggle="tab">Overview</a>
-            </li>
-            <li><a href="#2" data-toggle="tab">Recent Event</a>
-            </li>
-            <li><a href="#3" data-toggle="tab">Upcoming Event</a>
-            </li>
-        </ul>
-    </div> --}}
-
-      {{-- <div class="featured-img container">
-        <img src="images/clients/1.jpg" width="150" alt="">
-      </div> --}}
       <div class="featured-blog container">
           @foreach($events as $event)
             <h3> <a href="{{{action('EventsController@show', $event->id)}}}">{{{$event->name}}}</h3></a>

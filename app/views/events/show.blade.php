@@ -16,5 +16,4 @@
             	<button class="button-info">Register Now</button>
             @endif
     </div>
-    <hr>
 @stop
