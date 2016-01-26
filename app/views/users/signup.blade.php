@@ -19,11 +19,11 @@
 			</div> 
 			<div class="form-group">
 			    {{ Form::label('password', 'Password') }}
-				{{ Form::text('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
+				{{ Form::password('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
 			</div>
 			<div class="form-group">
 			    {{ Form::label('password_confirmation', 'Confirm Password') }}
-				{{ Form::text('password_confirmation', null, array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
+				{{ Form::password('password_confirmation', null, array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
 			</div> 
 			<div class="form-group">
 			    {{ Form::label('first_name', 'First name') }}

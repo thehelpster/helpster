@@ -30,8 +30,12 @@
 </head>
 <body>
 	@include('partials.navigation')
-    @yield('content')
-
+    <div class="body-content"> 
+       @if(Session::has('successMessage'))
+        {{{Session::get('successMessage')}}}
+        @endif
+        @yield('content')
+    </div>
 
     @include('partials.footer')
 
