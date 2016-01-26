@@ -1,64 +1,141 @@
 <?php
 
-class EventsController extends BaseController {
+class EventsController extends \BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/events', 'HomeController@showEvents');
-	|
-	*/
-
-	public function showEvents()
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
 	{
-		return View::make('events.index');
+		$events = VolunteerEvent::paginate(5);
+
+		return View::make('events.index')->with('events', $events);
 	}
 
-	public function createEvents()
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
 	{
 		return View::make('events.create');
 	}
 
-	public function editEvents($id)
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
 	{
-		return View::make('events.edit');
-	}
-	public function storeProfile()
-	{
-		$post = new Post();
+		$event = new Event();
 
 		Log::info('This is some useful information.');
 
-		return $this->validateAndSave($post);
+		return $this->validateAndSave($event);
 	}
 
-	public function validateAndSave($post)
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
 	{
-	    $validator = Validator::make(Input::all(), Post::$rules);
+		$event = VolunteerEvent::find($id);
+		
+		if(!$event){
+			App::abort(404);
+		}
+		return View::make('events.show')->with('event', $event);
+	}
+
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		return View::make('events.edit');
+	}
+
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$event = Event::find($id);
+
+		return $this->validateAndSave($event);
+	}
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
+	}
+
+	public function validateAndSave($event)
+	{
+	    $validator = Validator::make(Input::all(), Event::$rules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
-			$post->title = Input::get('title');
-			$post->content = Input::get('content');
-			$post->user_id = Auth::id();
+			$event->name = Input::get('name');
+			$event->description = Input::get('description');
+			$event->org_id = Input::get('org_id');
 
-			$userEmail = Auth::user()->email;
-
-			$result = $post->save();
+			$result = $event->save();
 
 			if($result) {
-				return Redirect::action('EventsController@show', $post->id);
+				return Redirect::action('EventsController@show', $event->id);
 			} else {
 				return Redirect::back()->withInput();
 			}
 		}
+
+	}
+	
+	public function register($id)
+	{
+		$event = VolunteerEvent::find($id);
+
+		return View::make('events.register', array('event'=>$event));
+	}
+
+	public function makeEventReservation($id)
+	{
+		$reservation = new RSVP;
+
+		$reservation->user_id=Auth::user()->id;
+		$reservation->event_id=$id;
+		$reservation->response= Input::get('response');
+
+		$reservation->save();
+		Session::flash('successMessage', 'Your reservationhas been saved');
+		
+		return Redirect::action('EventsController@index');
 
 	}
 }

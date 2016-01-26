@@ -19,30 +19,47 @@
                     @else
                     <li><a href="{{{action('HomeController@about')}}}">About</a></li>
                    @endif
-                    @if(Request::is('events.index'))
-                    <li class="selected"><a href="{{{ action('EventsController@showEvents')}}}">Events</a></li>
+                    @if(Request::is('events'))
+                    <li class="selected"><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @else
-                    <li><a href="{{{ action('EventsController@showEvents')}}}">Events</a></li>
+                    <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
           <li class= "hidden-xs hidden-sm">
             {{-- <a rel="home" href="index.html"><img class="logo" src="img/logo.png" width="200" alt="logo"></a> --}}
           </li>
-                    @if(Request::is('organization.index'))
-                    <li class="selected"><a href="{{{ action('OrganizationsController@showOrganizations')}}}">Organizations</a></li>
+                    @if(Request::is('organization'))
+                    <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @else
-                    <li><a href="{{{ action('OrganizationsController@showOrganizations')}}}">Organizations</a></li>
+                    <li><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @endif
-                    <li>
+                    
                         @if(!Auth::user())
-                        <a href="{{{ action('UsersController@create')}}}">Sign Up</a></li>
+                          @if(Request::is('users/create'))
+                        <li class="selected"><a href="{{{ action('UsersController@create')}}}">Sign Up</a></li>
+                        @else
+                        <li><a href="{{{ action('UsersController@create')}}}">Sign Up</a></li>
+                          @endif
                         @endif
-                    <li>
+                    
                          @if(!Auth::user())
-                            <a href="{{{ action('UsersController@login')}}}">Login</a></li>
+                            @if(Request::is('users/login'))
+                           <li class="selected"> <a href="{{{ action('UsersController@login')}}}">Login</a></li>
+                           @else
+                           <li> <a href="{{{ action('UsersController@login')}}}">Login</a></li>
+                            @endif
                          @else
-                         <a href="{{{ action('UsersController@logout')}}}">Logout</a>
+                          @if(Request::is('users'))
+                         <li class="selected"><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
+                          @else
+                          <li><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
+                          @endif
+                         <li><a href="{{{ action('UsersController@logout')}}}">Logout</a></li>
                         @endif
+                    @if(Request::is('contact'))
+                    <li class="selected"><a href="{{{ action('HomeController@contact')}}}">Contact</a></li>
+                    @else
                     <li><a href="{{{ action('HomeController@contact')}}}">Contact</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
