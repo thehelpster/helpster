@@ -19,7 +19,7 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
+	{   
 		return View::make('users.signup');
 	}
 
@@ -30,33 +30,49 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		 $repo = App::make('UserRepository');
-        $user = $repo->signup(Input::all());
+	{ 
+        // $inputs = Input::only(static::$createColumns);
+        // $rules = static::$createValidation;
 
-        if ($user->id) {
-        //     if (Config::get('confide::signup_email')) {
-        //         Mail::queueOn(
-        //             Config::get('confide::email_queue'),
-        //             Config::get('confide::email_account_confirmation'),
-        //             compact('user'),
-        //             function ($message) use ($user) {
-        //                 $message
-        //                     ->to($user->email, $user->username)
-        //                     ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
-        //             }
-        //         );
-        //     }
+		$validator = Validator::make(Input::all(), User::$rules);
 
-            return Redirect::action('UsersController@login')
-                ->with('notice', Lang::get('confide::confide.alerts.account_created'));
-        } else {
-            $error = $user->errors()->all(':message');
+        if ($validator->fails())
+        {
+            $messages = $validator->errors();
 
             return Redirect::action('UsersController@create')
                 ->withInput(Input::except('password','password_confirmation'))
-                ->with('error', $error);
+                ->withErrors($messages);
+                // ->with('error', $error);
+
         }
+        else 
+        {
+            $repo = App::make('UserRepository');
+            $user = $repo->signup(Input::all());
+
+            if ($user->id) {
+            //     if (Config::get('confide::signup_email')) {
+            //         Mail::queueOn(
+            //             Config::get('confide::email_queue'),
+            //             Config::get('confide::email_account_confirmation'),
+            //             compact('user'),
+            //             function ($message) use ($user) {
+            //                 $message
+            //                     ->to($user->email, $user->username)
+            //                     ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+            //             }
+            //         );
+            //     }
+
+                return Redirect::action('UsersController@login')
+                    ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+            } else {
+
+                $error = $user->errors()->all(':message');
+
+                            } //
+        } //closes else for validator-if 
 	}
 
 

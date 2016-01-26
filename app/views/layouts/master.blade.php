@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Helpster</title>
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     
+
     @yield('top-script')
 </head>
 <body>
@@ -34,13 +35,16 @@
         {{{Session::get('successMessage')}}}
         @endif
         @yield('content')
-
-
     </div>
-    @yield('bottom_script')
+
+    @include('partials.footer')
+
     <!-- script references -->
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.laravel.js"></script>
+    <script src="/js/jquery.validate.bootstrap.popover.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/nav-hover.min.js"></script>
     <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
@@ -55,8 +59,6 @@
       autoControls: true
       });
     </script>
-        <script type="text/javascript">
-        </script>
-    @include('partials.footer')
+    @yield('bottom_script')
 </body>
 </html>
