@@ -5,17 +5,16 @@
 	<div class="row">
         <div class="col-md-6 col-md-offset-4"> 
 			{{ Form::open(array('action' => 'UsersController@store', 'id' => 'signUpForm')) }}
-			@if ($errors->has())
-        		<div class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                {{ $error }}<br>        
-            @endforeach
         </div>
-        @endif
 			<h3>Sign Up Form</h3>
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}
 				{{ Form::text('email', null, array('placeholder'=> 'Type email here', 'class'=>'form-control')) }} 
+				@if($error->has('email')) 
+				<p class="help-block"> 
+					{{ $errors->first('email') }}
+				</p> 
+				@endif
 			</div> 
 			<div class="form-group">
 			    {{ Form::label('password', 'Password') }}

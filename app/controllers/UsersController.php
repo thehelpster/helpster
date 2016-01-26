@@ -59,7 +59,8 @@ class UsersController extends \BaseController {
 
             return Redirect::action('UsersController@create')
                 ->withInput(Input::except('password','password_confirmation'))
-                ->with('error', $error);
+                ->withErrors($validator);
+                // ->with('error', $error);
         }
 	}
 
