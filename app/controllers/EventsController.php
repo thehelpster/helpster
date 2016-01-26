@@ -99,14 +99,20 @@ class EventsController extends \BaseController {
 
 	public function validateAndSave($event)
 	{
-	    $validator = Validator::make(Input::all(), Event::$rules);
+	    $validator = Validator::make(Input::all(), VolunteerEvent::$rules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
+			
+			$event->org_id = Input::get('org_id');
 			$event->name = Input::get('name');
 			$event->description = Input::get('description');
-			$event->org_id = Input::get('org_id');
+			$event->location = Input::get('location');
+			$event->event_date = Input::get('event_date');
+			$event->volunteers_needed = Input::get('volunteers_needed');
+			$event->signup_deadline = Input::get('signup_deadline');
+
 
 			$result = $event->save();
 

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 		{{ Form::model($event, array('action' => array('EventsController@update', $event->id), 'method' => 'PUT')) }}
-		
+		{{Form::hidden('org_id', $event->org_id)}}
 		  <div class="form-group">
 		    {{ Form::label('name', 'Name') }}
 			{{ Form::text('name', null, array('placeholder'=> 'Type name Here', 'class'=>'form-control')) }}
@@ -28,7 +28,7 @@
 		    {{ Form::label('signup_deadline', 'Signup_Deadline') }}
 			{{ Form::text('signup_deadline', null, array('placeholder'=> 'Type signup_deadline Here', 'class'=>'form-control')) }}
 		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <button type="submit" class="btn btn-primary">Submit Changes</button>
 		
 		{{ Form::close() }}
 	</div>
