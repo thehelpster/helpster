@@ -4,7 +4,14 @@
 <div class="container">
 	<div class="row">
         <div class="col-md-6 col-md-offset-4"> 
-			{{ Form::open(array('action' => 'UsersController@store')) }}
+			{{ Form::open(array('action' => 'UsersController@store', 'id' => 'signUpForm')) }}
+			@if ($errors->has())
+        		<div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>        
+            @endforeach
+        </div>
+        @endif
 			<h3>Sign Up Form</h3>
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}
@@ -49,5 +56,25 @@
 	</div>
 </div>
 
+@stop
 
+@section('bottom-script')
+<script type="text/javascript">
+    $('#signUpForm').validate_popover({
+
+        highlight: function(element) {
+          jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        },
+        success: function(element) {
+          jQuery(element).closest('.form-group').removeClass('has-error');
+        },
+        events   : 'submit',
+        selector : 'input[type!=submit], select, textarea',
+        callback : function( elem, valid ) {
+            if ( ! valid ) {
+                $( elem ).addClass('error');
+            }
+        }
+    });
+</script>
 @stop

@@ -34,7 +34,7 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 		'gender' => 'max:1',
 		'image' => 'image'
 	);
-	
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *

@@ -19,7 +19,8 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
+	{   
+        Form::setValidation(User::$rules);
 		return View::make('users.signup');
 	}
 
@@ -30,8 +31,11 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		 $repo = App::make('UserRepository');
+	{ 
+        // $inputs = Input::only(static::$createColumns);
+        // $rules = static::$createValidation;
+
+		$repo = App::make('UserRepository');
         $user = $repo->signup(Input::all());
 
         if ($user->id) {
