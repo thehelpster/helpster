@@ -19,6 +19,11 @@
 			<div class="form-group">
 			    {{ Form::label('password', 'Password') }}
 				{{ Form::password('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
+				@if ($errors->has('password'))
+				<p class="help-block">
+					{{ $errors->first('password')}}
+				</p>
+				@endif		
 			</div>
 			<div class="form-group">
 			    {{ Form::label('password_confirmation', 'Confirm Password') }}

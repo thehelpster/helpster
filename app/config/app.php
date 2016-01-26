@@ -124,8 +124,7 @@ return array(
 		'Zizaco\Confide\ServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
-		'Bbatsche\Entrust\EntrustServiceProvider',
-		'Bllim\LaravelToJqueryValidation\LaravelToJqueryValidationServiceProvider'
+		'Bbatsche\Entrust\EntrustServiceProvider'
 
 	),
 
