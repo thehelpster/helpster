@@ -35,8 +35,6 @@ class EventsController extends \BaseController {
 	{
 		$event = new Event();
 
-		Log::info('This is some useful information.');
-
 		return $this->validateAndSave($event);
 	}
 
