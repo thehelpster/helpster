@@ -3,15 +3,18 @@
 @section('content')
 {{-- Need updates columns in 'users' table --}}
 <div class="site-heading">
-    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+    {{ Form::model(Auth::user(), array('action' => array('UsersController@update', Auth::user()->id), 'method' => 'PUT')) }}
 
-      <div class="form-group {{ ($errors->has('title')) ? 'has-error' : '' }}">
+      <div class="container form-group {{ ($errors->has('title')) ? 'has-error' : '' }}">
         {{ $errors->first('first_name', '<span class="help-block">:message</span>') }}
         {{ Form::label('first_name', 'First Name') }}
         {{ Form::text('first_name')}}
         {{ $errors->first('last_name', '<span class="help-block">:message</span>') }}
         {{ Form::label('last_name', 'Last Name')}}
         {{ Form::text('last_name')}}
+        {{ $errors->first('gender', '<span class="help-block">:message</span>') }}
+        {{ Form::label('gender', 'Gender')}}
+        {{ Form::text('gender')}}
         {{ $errors->first('zip', '<span class="help-block">:message</span>') }}
         {{ Form::label('zip', 'Zip Code')}}
         {{ Form::text('zip')}}
@@ -26,7 +29,7 @@
       <button type="submit" class="btn btn-default">Submit Changes</button>
     {{ Form::close() }}
 </div>
-<div class="container">
+{{-- <div class="container">
 		{{ Form::model($update, array('action' => array('UserController@update', $update->id), 'method' => 'PUT')) }}
 		
 		  <div class="form-group">
@@ -48,6 +51,6 @@
 		  <button type="submit" class="btn btn-default">Submit</button>
 		
 		{{ Form::close() }}
-	</div>
+	</div> --}}
 
 @stop

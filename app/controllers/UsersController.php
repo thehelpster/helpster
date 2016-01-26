@@ -123,21 +123,22 @@ class UsersController extends \BaseController {
 	    $validator = Validator::make(Input::all(), User::$rules);
 
 		if ($validator->fails()) {
+            var_dump($validator->messages());
+            die;
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
-			$user->email = Input::get('email');
 			$user->first_name = Input::get('first_name');
 			$user->last_name = Input::get('last_name');
-			$user->password = Input::get('password');
-			$user->birthday = Input::get('birthday');
-			$user->gender = Input::get('gender');
 			$user->zip = Input::get('zip');
+            $user->gender = Input::get('gender');
+            $user->quote = Input::get('quote');
+            $user->about = Input::get('about');
 
 
 			$result = $user->save();
 
 			if($result) {
-				return Redirect::action('UsersController@show', $user->id);
+				return Redirect::action('UsersController@index');
 			} else {
 				return Redirect::back()->withInput();
 			}
