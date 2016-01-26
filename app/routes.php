@@ -46,6 +46,8 @@ Route::get('organization', 'OrganizationsController@showOrganizations');
 // Route::get('signup', 'UsersController@signup');
 // Route::get('volunteer.login', 'UsersController@makeLogin');
 Route::get('contact', 'HomeController@contact');
+Route::get('/profile', 'HomeController@profile');
+Route::get('edit/{id}', 'HomeController@edit');
 
 Route::resource('/events', 'EventsController');
 Route::resource('/users', 'UsersController');

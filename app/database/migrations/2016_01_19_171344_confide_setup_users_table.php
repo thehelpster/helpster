@@ -19,6 +19,8 @@ class ConfideSetupUsersTable extends Migration
             $table->date('birthday');
             $table->integer('zip');
             $table->string('gender', 2)->nullable();
+            $table->string('quote')->nullable();
+            $table->string('about')->nullable();
             $table->string('confirmation_code');
             $table->string('remember_token')->nullable();
             $table->boolean('confirmed')->default(false);
