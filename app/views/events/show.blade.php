@@ -12,8 +12,7 @@
             <p> Created {{{$event->created_at->diffForHumans()}}}</p>
             @if(Auth::user())
             	<button class="button-info">Edit Event</button>
-            @else
-            	<button class="button-info">Register Now</button>
             @endif
+            	<button class="button-info">Register Now</button>
     </div>
 @stop
