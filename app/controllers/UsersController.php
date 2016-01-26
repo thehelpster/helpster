@@ -38,10 +38,11 @@ class UsersController extends \BaseController {
 
         if ($validator->fails())
         {
+            $messages = $validator->errors();
 
             return Redirect::action('UsersController@create')
                 ->withInput(Input::except('password','password_confirmation'))
-                ->withErrors($validator);
+                ->withErrors($messages);
                 // ->with('error', $error);
 
         }

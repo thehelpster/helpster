@@ -10,7 +10,7 @@
 			<div class="form-group">
 			    {{ Form::label('email', 'Email') }}
 				{{ Form::text('email', null, array('placeholder'=> 'Type email here', 'class'=>'form-control')) }} 
-				@if($error->has('email')) 
+				@if($errors->has('email')) 
 				<p class="help-block"> 
 					{{ $errors->first('email') }}
 				</p> 
