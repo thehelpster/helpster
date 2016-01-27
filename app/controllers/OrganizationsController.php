@@ -1,5 +1,5 @@
 <?php
-
+use Imanee\Imanee;
 class OrganizationsController extends \BaseController {
 
 	/**
@@ -105,7 +105,9 @@ class OrganizationsController extends \BaseController {
 	    } else {
 			$organization->name = Input::get('name');
 			$organization->description = Input::get('description');
-			Input::file('image')->move(__DIR__.'/../../public/images/organizations');
+			Input::file('image')->move(__DIR__.'/../../public/images/organizations', Input::file('image')->getClientOriginalName());
+			$image = new Imanee(__DIR__.'/../../public/images/organizations/'.Input::file('image')->getClientOriginalName());
+			$image->resize(200,150)->write(__DIR__.'/../../public/images/organizations/'.Input::file('image')->getClientOriginalName());
 			$organization->image = Input::file('image')->getClientOriginalName();
 			$organization->website = Input::get('website');
 			$organization->user_id = Input::get('user_id');
