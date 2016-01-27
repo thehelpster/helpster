@@ -133,7 +133,7 @@ class EventsController extends \BaseController {
 
 	public function makeEventReservation($id)
 	{
-		$reservation = new RSVP;
+		$reservation = new Rsvp;
 
 		$reservation->user_id=Auth::user()->id;
 		$reservation->event_id=$id;
