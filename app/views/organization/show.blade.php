@@ -9,5 +9,6 @@
             <p>{{{$organization->description}}} </p>
             <p> <a href="{{{$organization->website}}}"><span style="font-weight: bold;">Website:</span> {{{$organization->website}}}</a></p>
             <a href="{{{action('EventsController@create')}}}" class="btn btn-primary">Create Event</a>
+            <a href="{{{action('OrganizationsController@edit',$organization->id )}}}" class="btn btn-info">Edit Organization</a>
     </div>
 @stop
