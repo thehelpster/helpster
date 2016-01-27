@@ -22,7 +22,8 @@ class EventsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('events.create');
+		$organizations = Organization::where('user_id', '=', Auth::user()->id)->lists('name', 'id');
+		return View::make('events.create', compact('organizations'));
 	}
 
 
@@ -33,7 +34,7 @@ class EventsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$event = new Event();
+		$event = new VolunteerEvent();
 
 		return $this->validateAndSave($event);
 	}
@@ -65,8 +66,8 @@ class EventsController extends \BaseController {
 	public function edit($id)
 	{
 		$event = VolunteerEvent::find($id);
-
-		return View::make('events.edit', compact('event'));
+		$organizations = Organization::where('user_id', '=', Auth::user()->id)->list('id','name');
+		return View::make('events.edit', compact('event','organizations'));
 	}
 
 
