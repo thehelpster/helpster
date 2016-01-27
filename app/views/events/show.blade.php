@@ -11,8 +11,8 @@
             <p> <span style="font-weight: bold;">Signup Deadline:</span> {{{$event->signup_deadline}}}</p>
             <p> Created {{{$event->created_at->diffForHumans()}}}</p>
             @if(Auth::user())
-            	<button class="button-info">Edit Event</button>
+            	<a href="{{{action('EventsController@edit', $event->id)}}}" class="btn btn-primary">Edit Event</a>
             @endif
-            	<button class="button-info">Register Now</button>
+            	<a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>
     </div>
 @stop
