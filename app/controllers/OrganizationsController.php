@@ -35,7 +35,6 @@ class OrganizationsController extends \BaseController {
 	{
 		$organization = new Organization();
 
-
 		return $this->validateAndSave($organization);
 	}
 
