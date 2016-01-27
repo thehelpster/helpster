@@ -14,7 +14,7 @@
 		    <div class="item active">
 		      <img src="img/slide3.jpg" alt="">
 		      <div class="carousel-caption">
-		        Make Donation
+		        Make A Difference
 		      </div>
 		    </div>
 		    <div class="item">

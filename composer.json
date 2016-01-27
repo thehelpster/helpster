@@ -9,7 +9,8 @@
 		"zizaco/confide": "~4.3",
 		"bbatsche/entrust": "~2.0",
 		"nesbot/carbon": "~1.14",
-		"imanee/imanee": "^1.2"
+		"imanee/imanee": "^1.2",
+		"guzzlehttp/guzzle": "~4.0"
 	},
 	"require-dev":{
 		"barryvdh/laravel-debugbar": "~1.8",
