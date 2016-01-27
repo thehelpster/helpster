@@ -34,7 +34,7 @@ class OrganizationsController extends \BaseController {
 	public function store()
 	{
 		$organization = new Organization();
-
+		$user->attachRole($admin); //attaches the role of admin of the organization to the user
 		Log::info('This is some useful information.');
 
 		return $this->validateAndSave($organization);
