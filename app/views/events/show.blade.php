@@ -14,5 +14,6 @@
             	<a href="{{{action('EventsController@edit', $event->id)}}}" class="btn btn-primary">Edit Event</a>
             @endif
             	<a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>
+                  <a href="{{{action('EventsController@viewUsers', $event->id)}}}" class="btn btn-primary">See Who's Coming</a>
     </div>
 @stop

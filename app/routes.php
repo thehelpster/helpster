@@ -34,3 +34,4 @@ Route::post('events/register/{id}', 'EventsController@makeEventReservation');
 Route::resource('/events', 'EventsController');
 Route::resource('/organization', 'OrganizationsController');
 Route::resource('/users', 'UsersController');
+Route::get('/events/rsvps/{id}', 'EventsController@viewUsers');
