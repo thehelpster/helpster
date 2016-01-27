@@ -12,11 +12,18 @@
 
    <!-- Page Content -->
 
-            <div class="container" id="image">
-              @foreach($organizations as $organization)
-                <h3 class="img-thumbnail" > <a href="{{{action('OrganizationsController@show', $organization->id)}}}"><img src="/images/organizations/{{{$organization->image}}}"></a></h3>
-                {{ $organizations->links() }}
-              @endforeach
-            </div>
+    <div class="container">
+      <div class="row">
+        @foreach($organizations as $organization)
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a href="{{{action('OrganizationsController@show', $organization->id)}}}">
+                  <img class="image thumbnail" src="/images/organizations/{{{$organization->image}}}">
+                </a>
+            
+          </div>
+            {{ $organizations->links() }}
+        @endforeach
+      </div>
+    </div>
 @stop
              
