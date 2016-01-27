@@ -20,11 +20,6 @@
         	</div>
         {{ Form::text('last_name')}}
         	<div>
-        {{ $errors->first('gender', '<span class="help-block">:message</span>') }}
-        {{ Form::label('gender', 'Gender')}}
-    		</div>
-        {{ Form::text('gender')}}
-        	<div>
         {{ $errors->first('zip', '<span class="help-block">:message</span>') }}
         {{ Form::label('zip', 'Zip Code')}}
         	</div>

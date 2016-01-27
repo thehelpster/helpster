@@ -13,6 +13,11 @@
     		</div>
         <h1>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h1>
         <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
+    	@if (Auth::user()->name=='org_admin')
+    		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>
+    	@else
+    		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Test an Organization</a>    	
+    	@endif
     	<h3>{{{ Auth::user()->quote }}}</h3>
         <header>
             <h2>About {{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h2>

@@ -140,7 +140,7 @@ class UsersController extends \BaseController {
 
 	public function validateAndSave($user)
 	{
-	    $validator = Validator::make(Input::all(), User::$rules);
+	    $validator = Validator::make(Input::all(), User::$updateRules);
 
 		if ($validator->fails()) {
             var_dump($validator->messages());
@@ -150,7 +150,6 @@ class UsersController extends \BaseController {
 			$user->first_name = Input::get('first_name');
 			$user->last_name = Input::get('last_name');
 			$user->zip = Input::get('zip');
-            $user->gender = Input::get('gender');
             $user->quote = Input::get('quote');
             $user->about = Input::get('about');
             $image = Input::file('image');
