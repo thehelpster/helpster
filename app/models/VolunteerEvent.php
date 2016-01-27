@@ -28,6 +28,6 @@ class VolunteerEvent extends BaseModel
 
 	public function rsvps()
 	{
-		return $this->belongsToMany('User', 'rsvps');
+		return $this->belongsToMany('User', 'rsvps','event_id', 'user_id');
 	}
 }
