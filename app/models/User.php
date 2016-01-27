@@ -40,6 +40,14 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 		'image' => 'image'
 	);
 
+	public static $updateRules = array(
+		'first_name' => 'required|min:2|max:100',
+		'last_name' => 'required|min:2|max:100',
+		'zip' => 'required|max:5',
+		'quote' => 'min:5|max:255',
+		'image' => 'image'
+	);
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
