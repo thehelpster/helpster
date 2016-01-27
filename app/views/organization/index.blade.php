@@ -12,9 +12,9 @@
 
    <!-- Page Content -->
 
-            <div class="featured-blog container">
+            <div class="container" id="image">
               @foreach($organizations as $organization)
-                <h3> <a href="{{{action('OrganizationsController@show', $organization->id)}}}"><img src="/images/organizations/{{{$organization->image}}}"></a></h3>
+                <h3 class="img-thumbnail" > <a href="{{{action('OrganizationsController@show', $organization->id)}}}"><img src="/images/organizations/{{{$organization->image}}}"></a></h3>
                 {{ $organizations->links() }}
               @endforeach
             </div>
