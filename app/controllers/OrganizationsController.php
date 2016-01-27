@@ -34,8 +34,6 @@ class OrganizationsController extends \BaseController {
 	public function store()
 	{
 		$organization = new Organization();
-		$user->attachRole($admin); //attaches the role of admin of the organization to the user
-		Log::info('This is some useful information.');
 
 		return $this->validateAndSave($organization);
 	}
@@ -102,12 +100,13 @@ class OrganizationsController extends \BaseController {
 	{
 	    $validator = Validator::make(Input::all(), Organization::$rules);
 
-		if ($validator->fails()) {
+		if ($validator->fails()) { dd($validator->messages());
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 			$organization->name = Input::get('name');
 			$organization->description = Input::get('description');
-			$organization->image = Input::get('image');
+			Input::file('image')->move(__DIR__.'/../../public/images/organizations');
+			$organization->image = Input::file('image')->getClientOriginalName();
 			$organization->website = Input::get('website');
 			$organization->user_id = Input::get('user_id');
 

@@ -13,7 +13,7 @@ class Organization extends BaseModel
 		'date_established' => 'required',
 		'description' => 'required|min:7',
 		'website' => 'required|min:10|url|active_url',
-		'image' => 'required|image'
+		'image' => 'required'
 
 	);
 
