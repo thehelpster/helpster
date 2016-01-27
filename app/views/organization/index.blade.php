@@ -14,7 +14,7 @@
 
             <div class="featured-blog container">
               @foreach($organizations as $organization)
-                <h3> <a href="{{{action('OrganizationsController@show', $organization->id)}}}"><img src="/images/clients/{{{$organization->image}}}"></a></h3>
+                <h3> <a href="{{{action('OrganizationsController@show', $organization->id)}}}"><img src="/images/organizations/{{{$organization->image}}}"></a></h3>
                 {{ $organizations->links() }}
               @endforeach
             </div>

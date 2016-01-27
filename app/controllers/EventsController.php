@@ -22,7 +22,8 @@ class EventsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('events.create');
+		$organizations = Organization::where('user_id', '=', Auth::user()->id)->lists('name', 'id');
+		return View::make('events.create', compact('organizations'));
 	}
 
 
@@ -33,9 +34,7 @@ class EventsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$event = new Event();
-
-		Log::info('This is some useful information.');
+		$event = new VolunteerEvent();
 
 		return $this->validateAndSave($event);
 	}
@@ -66,7 +65,9 @@ class EventsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('events.edit');
+		$event = VolunteerEvent::find($id);
+		$organizations = Organization::where('user_id', '=', Auth::user()->id)->list('id','name');
+		return View::make('events.edit', compact('event','organizations'));
 	}
 
 
@@ -78,7 +79,7 @@ class EventsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$event = Event::find($id);
+		$event = VolunteerEvent::find($id);
 
 		return $this->validateAndSave($event);
 	}
@@ -97,14 +98,20 @@ class EventsController extends \BaseController {
 
 	public function validateAndSave($event)
 	{
-	    $validator = Validator::make(Input::all(), Event::$rules);
+	    $validator = Validator::make(Input::all(), VolunteerEvent::$rules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
+			
+			$event->org_id = Input::get('org_id');
 			$event->name = Input::get('name');
 			$event->description = Input::get('description');
-			$event->org_id = Input::get('org_id');
+			$event->location = Input::get('location');
+			$event->event_date = Input::get('event_date');
+			$event->volunteers_needed = Input::get('volunteers_needed');
+			$event->signup_deadline = Input::get('signup_deadline');
+
 
 			$result = $event->save();
 

@@ -1,12 +1,12 @@
        <div class="navbar" role="navigation">
-            {{-- <div class="navbar-header">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-            </div> --}}
+            </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     @if(Request::is('/'))
@@ -25,7 +25,7 @@
                     <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
           <li class= "hidden-xs hidden-sm">
-            {{-- <a rel="home" href="index.html"><img class="logo" src="img/logo.png" width="200" alt="logo"></a> --}}
+            <a rel="home" href="index.html"><img class="logo" src="images/drawing.png" width="200" alt="logo"></a>
           </li>
                     @if(Request::is('organization'))
                     <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
@@ -51,7 +51,7 @@
                           @if(Request::is('users'))
                          <li class="selected"><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
                           @else
-                          <li><a href="{{{ action('UsersController@show')}}}">Profile</a></li>
+                          <li><a href="{{{ action('UsersController@index')}}}">Profile</a></li>
                           @endif
                          <li><a href="{{{ action('UsersController@logout')}}}">Logout</a></li>
                         @endif
