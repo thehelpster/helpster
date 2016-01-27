@@ -18,9 +18,9 @@
 			<div class="form-group">
 			    {{ Form::label('password', 'Password') }}
 				<div>
-					{{ Form::password('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
+					{{ Form::password('password', array('placeholder'=> 'Type email here', 'class'=>'form-control')) }}
+
 				</div>
-					
 				@if ($errors->has('password'))
 					<p class="alert alert-danger">
 						{{ $errors->first('password')}}
@@ -30,7 +30,7 @@
 			<div class="form-group">
 			    {{ Form::label('password_confirmation', 'Confirm Password') }}
 				<div>
-					{{ Form::password('password_confirmation', null, array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
+					{{ Form::password('password_confirmation', array('placeholder'=> 'Re-type password here', 'class'=>'form-control')) }} 
 				</div>	
 				@if($errors->has('password_confirmation'))
 				<p class='alert alert-danger'>

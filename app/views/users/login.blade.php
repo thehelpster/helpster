@@ -19,7 +19,7 @@
 			<div class="form-group">
 				{{ Form::label('password', 'Password') }}
 				<div>
-					{{ Form::password('password', null, array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
+					{{ Form::password('password', array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
 				</div>	
 				@if($errors->has('password'))
 					<p class="alert alert-danger">
