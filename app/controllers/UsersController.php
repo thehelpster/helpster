@@ -337,10 +337,10 @@ class UsersController extends \BaseController {
         Mail::send('emails.contact', $data, function($message) use ($data)
         {
             $message->from($data['email'], $data['from']);
-            $message->to('jeraldsaenz@me.com', 'Jerald Saenz')->subject($data['subject']);
+            $message->to('helpsterorganization@gmail.com', 'Helpster')->subject($data['subject']);
         });
         Session::flash('successMessage', 'Your email has been sent');
-        return Redirect::action('HomeController@getEmailSentPage');
+        return Redirect::action('UsersController@index');
     }
 
 }

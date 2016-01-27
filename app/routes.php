@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@showWelcome');
 Route::get('about', 'HomeController@about');
 Route::get('contact', 'HomeController@contact');
+Route::post('contact', 'UsersController@doContact');
 
 
 // Confide routes
@@ -30,8 +31,9 @@ Route::get('users/logout', 'UsersController@logout');
 
 Route::get('events/register/{id}', 'EventsController@register');
 Route::post('events/register/{id}', 'EventsController@makeEventReservation');
+Route::get('/events/rsvps/{id}', 'EventsController@viewUsers');
+
 
 Route::resource('/events', 'EventsController');
 Route::resource('/organization', 'OrganizationsController');
 Route::resource('/users', 'UsersController');
-Route::get('/events/rsvps/{id}', 'EventsController@viewUsers');
