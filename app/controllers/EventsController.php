@@ -145,4 +145,8 @@ class EventsController extends \BaseController {
 		return Redirect::action('EventsController@index');
 
 	}
+	public function viewUsers($id) {
+		$rsvps = VolunteerEvent::with('rsvps')->where('id', '=', $id)->first();
+		return View::make('events.users')->with('rsvps', $rsvps); 
+	}
 }
