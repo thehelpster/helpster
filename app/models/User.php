@@ -48,6 +48,11 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 		'image' => 'image'
 	);
 
+	public static $loginRules = array(
+		'email' => 'required|email',
+		'password' => 'required|min:6'
+	);
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *

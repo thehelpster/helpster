@@ -183,21 +183,36 @@ class UsersController extends \BaseController {
         $repo = App::make('UserRepository');
         $input = Input::all();
 
-        if ($repo->login($input)) {
-            return Redirect::action('UsersController@index');
-        } else {
-            if ($repo->isThrottled($input)) {
-                $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
-            } elseif ($repo->existsButNotConfirmed($input)) {
-                $err_msg = Lang::get('confide::confide.alerts.not_confirmed');
-            } else {
-                $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
-            }
-            dd($err_msg);
+        $validator = Validator::make(Input::all(), User::$loginRules);
+
+        if ($validator->fails())
+        {
+            $messages = $validator->errors();
+
             return Redirect::action('UsersController@login')
                 ->withInput(Input::except('password'))
-                ->with('error', $err_msg);
+                ->withErrors($messages);
+                // ->with('error', $error);
+
         }
+        else {
+            if ($repo->login($input)) {
+                return Redirect::action('UsersController@index');
+            } else {
+                if ($repo->isThrottled($input)) {
+                    $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
+                } elseif ($repo->existsButNotConfirmed($input)) {
+                    $err_msg = Lang::get('confide::confide.alerts.not_confirmed');
+                } else {
+                    $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
+                }
+                dd($err_msg);
+                return Redirect::action('UsersController@login')
+                    ->withInput(Input::except('password'))
+                    ->with('error', $err_msg);
+            }  
+        }
+        
     }
 
     /**
