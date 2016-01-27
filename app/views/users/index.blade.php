@@ -25,7 +25,9 @@
                 <p> {{{ Auth::user()->about }}}</p>
             </div>
         </header>
-
+       {{--  @if (Entrust::is('site_admin'))
+            <h1>You're an admin</h1>
+        @endif --}}
         <ul>
         	<li>Member since: <em>{{{ Auth::user()->created_at->format('Y-m-d') }}}</em></li>
             <li>From: <em>{{{ Auth::user()->zip }}}</em></li>

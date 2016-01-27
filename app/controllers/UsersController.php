@@ -65,6 +65,10 @@ class UsersController extends \BaseController {
             //         );
             //     }
 
+                $userRole = Role::where('name', 'default_role')->first();
+
+                $user->attachRole($userRole);
+
                 return Redirect::action('UsersController@login')
                     ->with('notice', Lang::get('confide::confide.alerts.account_created'));
             } else {
