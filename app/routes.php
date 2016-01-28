@@ -33,6 +33,8 @@ Route::get('events/register/{id}', 'EventsController@register');
 Route::post('events/register/{id}', 'EventsController@makeEventReservation');
 Route::get('/events/rsvps/{id}', 'EventsController@viewUsers');
 
+Route::get('/volunteers/view/{id}', 'VolunteerController@viewProfile');
+Route::get('/volunteers/view/{id}', 'VolunteerController@viewUser');
 
 Route::resource('/events', 'EventsController');
 Route::resource('/organization', 'OrganizationsController');
