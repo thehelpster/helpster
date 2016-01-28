@@ -48,17 +48,7 @@
     <script src="/js/nav-hover.min.js"></script>
     <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
-    <!-- Place in the <head>, after the three links -->
-    <script>
-     $('.testimonials-slider').bxSlider({
-      slideWidth: 800,
-      minSlides: 1,
-      maxSlides: 1,
-      slideMargin: 32,
-      auto: true,
-      autoControls: true
-      });
-    </script>
+
     @yield('bottom_script')
 </body>
 </html>
