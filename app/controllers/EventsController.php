@@ -126,27 +126,42 @@ class EventsController extends \BaseController {
 	
 	public function register($id)
 	{
-		$event = VolunteerEvent::find($id);
+		if(Confide::user()){
+			$event = VolunteerEvent::find($id);
 
-		return View::make('events.register', array('event'=>$event));
+			return View::make('events.register', array('event'=>$event));
+		} else{
+			Session::flash('successMessage', 'You must first be logged in to register for an event!!');
+			return View::make('users.login');
+		}
 	}
 
 	public function makeEventReservation($id)
 	{
-		$reservation = new Rsvp;
-
-		$reservation->user_id=Auth::user()->id;
-		$reservation->event_id=$id;
-		$reservation->response= Input::get('response');
-
-		$reservation->save();
-		Session::flash('successMessage', 'Your reservationhas been saved');
 		
-		return Redirect::action('EventsController@index');
+		if(Confide::user()){
+			$reservation = new RSVP;
 
+			$reservation->user_id=Auth::user()->id;
+			$reservation->event_id=$id;
+			$reservation->response= Input::get('response');
+
+			$reservation->save();
+			Session::flash('successMessage', 'Your reservation has been saved');
+			
+			return Redirect::action('EventsController@index');
+		}
+		else{
+			
+			Session::flash('successMessage', 'You must first be logged in to register for an event!!');
+			return View::make('users.login');
+		}
 	}
+
 	public function viewUsers($id) {
 		$rsvps = VolunteerEvent::with('rsvps')->where('id', '=', $id)->first();
 		return View::make('events.users')->with('rsvps', $rsvps); 
 	}
+
+
 }

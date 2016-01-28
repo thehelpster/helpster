@@ -30,3 +30,22 @@
 .alert{
   width: 54%;
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /*margin top for navigation*/
+  margin-top: 100px;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 90px;
+  /*background-color: #f5f5f5;*/
+}
