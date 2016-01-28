@@ -27,6 +27,7 @@
                     @else
                       <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
+
                     @if(Request::is('organization'))
                       <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @else

@@ -36,7 +36,7 @@ class EventsController extends \BaseController {
 	{
 		$event = new VolunteerEvent();
 
-		return $this->validateAndSave($event);
+		return $this->validateAndCreate($event);
 	}
 
 
@@ -81,7 +81,7 @@ class EventsController extends \BaseController {
 	{
 		$event = VolunteerEvent::find($id);
 
-		return $this->validateAndSave($event);
+		return $this->validateAndUpdate($event);
 	}
 
 
@@ -96,9 +96,35 @@ class EventsController extends \BaseController {
 		//
 	}
 
-	public function validateAndSave($event)
+	public function validateAndCreate($event)
 	{
-	    $validator = Validator::make(Input::all(), VolunteerEvent::$rules);
+		$validator = Validator::make(Input::all(), VolunteerEvent::$rules);
+
+		if ($validator->fails()) {
+	    return Redirect::back()->withInput()->withErrors($validator);
+	    } else {
+			
+			$event->org_id = Input::get('org_id');
+			$event->name = Input::get('name');
+			$event->description = Input::get('description');
+			$event->location = Input::get('location');
+			$event->event_date = Input::get('event_date');
+			$event->volunteers_needed = Input::get('volunteers_needed');
+			$event->signup_deadline = Input::get('signup_deadline');
+			$result = $event->save();
+
+			if(!$result)
+			{
+				return Redirect::back()->withInput();
+			}
+
+			return $this->save($result);
+		}
+	}	
+
+	public function validateAndUpdate($event)
+	{
+		$validator = Validator::make(Input::all(), VolunteerEvent::$updateRules);
 
 		if ($validator->fails()) {
 	    return Redirect::back()->withInput()->withErrors($validator);
@@ -112,16 +138,22 @@ class EventsController extends \BaseController {
 			$event->volunteers_needed = Input::get('volunteers_needed');
 			$event->signup_deadline = Input::get('signup_deadline');
 
+			return $this->save($result);
 
-			$result = $event->save();
-
-			if($result) {
-				return Redirect::action('EventsController@show', $event->id);
-			} else {
+			if(!$result)
+			{
 				return Redirect::back()->withInput();
 			}
-		}
 
+			$result = $event->save();
+		}
+	}
+
+	public function save($result)
+	{
+
+		return Redirect::action('EventsController@show', $event->id);
+		
 	}
 	
 	public function register($id)
