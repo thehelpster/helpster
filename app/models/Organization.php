@@ -16,6 +16,12 @@ class Organization extends BaseModel
 		'image' => 'required'
 
 	);
+	public static $editRules = array(
+		'name' => 'required|min:5|max:255',
+		'description' => 'required|min:7',
+		'website' => 'required|min:10|url|active_url',
+		'image' => 'required'
+		);
 
 	public function user()
 	{
@@ -26,4 +32,5 @@ class Organization extends BaseModel
 	{
 		return $this->hasMany('VolunteerEvent');
 	}
+
 }
