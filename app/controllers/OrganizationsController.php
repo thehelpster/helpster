@@ -36,7 +36,7 @@ class OrganizationsController extends \BaseController {
 		$organization = new Organization();
 		$userRole = Role::where('name', 'admin')->first();
 		Auth::user()->attachRole($userRole->id);
-		Auth::user()->RolesUser()->sync(3);
+		Auth::user()->Roles()->sync(array(2));
 		
 		
 

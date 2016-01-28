@@ -17,7 +17,10 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		$events = VolunteerEvent::take(3)->get();
+        // dd($events);
+
+        return View::make('hello')->with('events', $events);
 	}
 
 	public function about()
