@@ -74,10 +74,6 @@
                   <div>
                     <a href="{{{action('EventsController@show', $event->id)}}}" class="button-main bg-fio-point">Read More</a>
                   </div>
-                   <div class="like-wrap">
-                       <a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
-                       <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-                   </div>
               	</div>
               </div>
             </div>

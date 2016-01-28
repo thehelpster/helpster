@@ -30,11 +30,9 @@ divider {
 	position: relative;
 	top: 29%;
 	font-size: 35px;
-<<<<<<< HEAD
 	text-align: center;
 	margin-bottom: 40px;
-=======
->>>>>>> origin/gh-pages
+ origin/gh-pages
 }
 .connect-text{
 	margin-top: 50px;
@@ -47,7 +45,7 @@ divider {
 	border-bottom: 2px solid;
 }
 body {
-	background: rgba(153, 211, 213, 0.32);
+	background: #FFBF73;
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Varela Round', sans-serif;
@@ -161,6 +159,7 @@ p.text-center.sub-text {
   *display:inline; /* ie7 fix */
   *zoom:1; /* hasLayout ie7 trigger */
   vertical-align: top;
+  margin-top: 25px;
 }
 .navbar-collapse.collapse {
 	display: block!important;
@@ -539,6 +538,7 @@ section.blog {
 	height: auto;
 	border: 1px solid #e1e8ed;
 	background: #fff;
+	opacity: .75;
 }
 
 .blok-read-sm img
@@ -549,7 +549,7 @@ section.blog {
 
 .content-block .button-main {
 	border: 1px solid rgba(47, 116, 116, 1);
-	background: rgba(47, 116, 116, 1);
+	background: #CB7105;
 	padding: 20px 22px;
 	line-height: 10px;
 	color: white;
