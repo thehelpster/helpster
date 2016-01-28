@@ -8,7 +8,7 @@ class OrganizationsController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{	
 		$organizations = Organization::paginate(5);
 
 		return View::make('organization.index')->with('organizations', $organizations);
@@ -34,6 +34,8 @@ class OrganizationsController extends \BaseController {
 	public function store()
 	{
 		$organization = new Organization();
+		$userRole = Role::where('name', 'admin')->first();
+		Auth::user()->attachRole($userRole->id);
 
 		return $this->validateAndSave($organization);
 	}

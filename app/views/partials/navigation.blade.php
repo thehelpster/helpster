@@ -25,7 +25,7 @@
                     <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
           <li class= "hidden-xs hidden-sm">
-            <a rel="home" href="index.html"><img class="logo" src="images/drawing.png" width="200" alt="logo"></a>
+            <a rel="home" href="index.html"><img class="logo" src="images/Hat-02.png" width="100" alt="logo"></a>
           </li>
                     @if(Request::is('organization'))
                     <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
