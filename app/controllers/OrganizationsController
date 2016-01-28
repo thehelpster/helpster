@@ -1,6 +1,6 @@
 <?php
 
-class VolunteerController extends BaseController {
+class OrganizationsController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,24 +15,23 @@ class VolunteerController extends BaseController {
 	|
 	*/
 
-	public function createProfile()
+	public function createOrganization()
 	{
-		return View::make('volunteer.create');
+		return View::make('organization.create');
 	}
 
-	public function editProfile($id)
+	public function editOrganization($id)
 	{
-		return View::make('volunter.edit');
+		return View::make('organization.edit');
 	}
+	public function storeProfile()
+	{
+		$post = new Post();
 
-	// public function storeProfile()
-	// {
-	// 	$post = new Post();
+		Log::info('This is some useful information.');
 
-	// 	Log::info('This is some useful information.');
-
-	// 	return $this->validateAndSave($post);
-	// }
+		return $this->validateAndSave($post);
+	}
 
 	public function validateAndSave($post)
 	{
@@ -50,23 +49,11 @@ class VolunteerController extends BaseController {
 			$result = $post->save();
 
 			if($result) {
-				return Redirect::action('VolunteerController@show', $post->id);
+				return Redirect::action('OrganizationsController@show', $post->id);
 			} else {
 				return Redirect::back()->withInput();
 			}
 		}
 
-	}
-
-	public function viewProfile($id)
-	{
-		$user = User::find($id);
-		return View::make('users.index')->with('user', $user);
-	}
-
-	public function viewUser($id)
-	{
-		$user = User::find($id);
-		return View::make('users.profile')->with('rsvp', $user); 
 	}
 }
