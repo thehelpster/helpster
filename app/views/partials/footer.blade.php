@@ -14,7 +14,7 @@
             </div>
           </div>
            <p class="text-center footer-text1">210 555 5555</p>
-            <p class="text-center footer-text">admin@helpster.io</p></div>
+            <p class="text-center footer-text">helpsterorganization@gmail.com</p></div>
         <div class="footer-third col-xs-12 col-sm-4 col-md-4">
           <div class="copyright">
               <span>Copyright 2014 Theme</span><br>

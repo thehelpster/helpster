@@ -32,7 +32,7 @@ divider {
 	font-size: 35px;
 	text-align: center;
 	margin-bottom: 40px;
- origin/gh-pages
+ 	origin/gh-pages
 }
 .connect-text{
 	margin-top: 50px;
@@ -45,7 +45,7 @@ divider {
 	border-bottom: 2px solid;
 }
 body {
-	background: #FFBF73;
+	background: #FFFF;
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Varela Round', sans-serif;
@@ -94,7 +94,7 @@ p, li {
         float: none;
     }
     .navbar-nav>li>a {
-        padding-top: 10px;
+        /*padding-top: 10px;*/
         padding-bottom: 10px;
     }
     .navbar-text {
@@ -115,7 +115,6 @@ p, li {
 	padding: 50px 0;
 }
 .heading-icon{
-	margin-top: 79px;
 	position: relative;
 	display: inline-block;
 	border-radius: 10px;
@@ -151,6 +150,11 @@ p.text-center.sub-text {
 	text-decoration: none;
 	background-color: transparent;
 }
+
+.navbar {
+	margin-bottom: 0;
+}
+
 @media (min-width: 991px){
 .navbar .nav,
 .navbar .nav > li {
@@ -159,7 +163,7 @@ p.text-center.sub-text {
   *display:inline; /* ie7 fix */
   *zoom:1; /* hasLayout ie7 trigger */
   vertical-align: top;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .navbar-collapse.collapse {
 	display: block!important;
@@ -226,12 +230,14 @@ ul.nav.navbar-nav li a{
 	font-weight: bold;
 	font-size: 15px;
 }
+
 .logo {
 	position: relative;
 	top: -47px;
 	left: 5px;
 	border-bottom: none;
 }
+
 @media (max-width: 768px){
 	.logo {
 	position: relative;
@@ -537,8 +543,8 @@ section.blog {
 	width: 100%;
 	height: auto;
 	border: 1px solid #e1e8ed;
-	background: #fff;
-	opacity: .75;
+	background: #FFFF;
+	/*opacity: .75;*/
 }
 
 .blok-read-sm img
@@ -725,7 +731,7 @@ section.blog {
 
 .carousel {
     position: relative;
-    top: 30px;
+    /*top: 30px;*/
     margin-bottom: 35px;
     float: left;
     width: 100%;
@@ -1154,8 +1160,9 @@ footer{
 	float: left;
 	width: 100%;
 	overflow: hidden;
-	background: #395B71;
+	background: #5B9CBE;
 	color: white;
+	margin-top: 10px;
 }
 .footer-menus li{
 	cursor: pointer;

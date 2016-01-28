@@ -34,7 +34,7 @@
        @if(Session::has('successMessage'))
         {{{Session::get('successMessage')}}}
         @endif
-        @yield('content')
+    @yield('content')
     </div>
 
     @include('partials.footer')
