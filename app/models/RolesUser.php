@@ -9,6 +9,5 @@ class RolesUser extends BaseModel
 		//event id required
 	);
 
-	
 
 }

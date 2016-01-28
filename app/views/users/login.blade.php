@@ -14,7 +14,7 @@
 					{{ $errors->first('email')}}
 				</p>
 				@endif	
-			 </div>
+			</div>
 			<div class="form-group">
 				{{ Form::label('password', 'Password') }}
 				<div>
