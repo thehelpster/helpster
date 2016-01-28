@@ -105,10 +105,13 @@ class OrganizationsController extends \BaseController {
 
 	public function validateAndSave($organization)
 	{
-	    $validator = Validator::make(Input::all(), Organization::$rules);
+	    $validator = Validator::make(Input::all(), Organization::$editRules);
 
-		if ($validator->fails()) { dd($validator->messages());
-	    return Redirect::back()->withInput()->withErrors($validator);
+
+		if ($validator->fails()) { 
+			$messages = $validator->errors();
+			
+	    	return Redirect::back()->withInput()->withErrors($messages);
 	    } else {
 			$organization->name = Input::get('name');
 			$organization->description = Input::get('description');
