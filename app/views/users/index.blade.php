@@ -41,12 +41,12 @@
                     Member since: <em>{{{ Auth::user()->created_at->format('Y-m-d') }}}</em>
                 </li>
                 <li>
-                    From: {{{ Auth::user()->zip }}}
+                From: <em>{{{ Auth::user()->zip }}}</em>
                 </li>
             </ul>
         </div>
         {{--This section is placed at the top right, this is users past work --}}
-        <div class="col-md-6 orgabout">
+        <div class="col-md-8 orgabout">
         	<div class="row">
             	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Organizations</h2>
             	<div class="row">
@@ -77,7 +77,8 @@
     	    <li>
                 <img src="http://www.carpentrybyrob.com/img/carpentry%20by%20rob.jpg" class="img-responsive img-rounded" width="200px">
                 <h5>I helped someone fix the frame in their home</h5>
-    	    </li>   
+    	    </li>
+        </ul>       
 	</div>
 </div> 
 
