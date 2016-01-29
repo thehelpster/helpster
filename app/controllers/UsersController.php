@@ -1,5 +1,5 @@
 <?php
-
+use Imanee\Imanee;
 class UsersController extends \BaseController {
 
 	/**
@@ -154,8 +154,15 @@ class UsersController extends \BaseController {
             $user->quote = Input::get('quote');
             $user->about = Input::get('about');
             $image = Input::file('image');
-            $user->image = $image->getClientOriginalName();
-            $image->move(__DIR__ . '/../../public/img');
+            // $user->image = $image->getClientOriginalName();
+            // $image->move(__DIR__ . '/../../public/img');
+            if(Input::hasfile('image'))
+            {
+            Input::file('image')->move(__DIR__.'/../../public/images/users', Input::file('image')->getClientOriginalName());
+            $image = new Imanee(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
+            $image->resize(200,150)->write(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
+            $user->image = Input::file('image')->getClientOriginalName();
+            }
 
 			$result = $user->save();
 
@@ -211,7 +218,6 @@ class UsersController extends \BaseController {
                 } else {
                     $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
                 }
-                dd($err_msg);
                 return Redirect::action('UsersController@login')
                     ->withInput(Input::except('password'))
                     ->with('error', $err_msg);

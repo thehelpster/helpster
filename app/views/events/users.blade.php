@@ -11,7 +11,7 @@
 			@foreach ($rsvps->rsvps as $rsvp)
 			
 				<tr class='table table-hover table-bordered body'>
-					<td><img src="{{{$rsvp->image}}}"  class="img-responsive"></td>
+					<td><img src="/images/users/{{{$rsvp->image}}}"  class="img-responsive"></td>
 					<td><a href="{{{ action('VolunteerController@viewUser', $rsvp->id) }}}">{{{$rsvp->first_name}}} {{{$rsvp->last_name}}}</a></td>  
 					<td>{{{$rsvp->email}}}</td>
 				</tr>
