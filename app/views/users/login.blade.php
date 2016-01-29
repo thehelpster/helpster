@@ -3,7 +3,7 @@
 @section ('content')
 <div class="container">
 	<div class="row">
-        <div class="col-md-6 col-md-offset-4"> 
+        <div class="col-md-6 col-md-offset-4 extra-spacing"> 
 		{{ Form::open(array('action' => 'UsersController@doLogin')) }}
         	
 			<div class="form-group">

@@ -8,9 +8,9 @@
 
     <div class="container">  
         <div class="row">
-            <div class="col-md-6 col-md-offset-4">                         
+            <div class="col-md-6 col-md-offset-4 extra-spacing">                         
                 <h2>CONTACT US</h2>
-            {{ Form::open(array('action' => 'UsersController@doContact')) }}
+                  {{ Form::open(array('action' => 'UsersController@doContact')) }}
                 <div class="form-group">
                    {{Form::label('from', 'Your name')}}
                    {{Form::text('from', null, array('class' => 'name', 'placeholder' => 'Enter your name', 'class'=>'form-control'))}}
@@ -30,7 +30,7 @@
                 </div>                
                 <div id="success">
                     {{Form::submit('Send email', array('class'=> 'btn btn-primary'))}}
-                    <hr>
+                    
                 </div>
             {{Form::close()}}
 

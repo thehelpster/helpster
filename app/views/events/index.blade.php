@@ -6,16 +6,18 @@
     </div>
 
       <div class="featured-blog container">
-          @foreach($events as $event)
-            <h3> <a href="{{{action('EventsController@show', $event->id)}}}">{{{$event->name}}}</h3></a>
-            <p>{{{$event->description}}} </p>
-            <p> <span style="font-weight: bold;">Location:</span> {{{$event->location}}}</p>
-            <p> <span style="font-weight: bold;">Event Date:</span> {{{$event->event_date}}}</p>
-            <p> <span style="font-weight: bold;">Number of Volunteers needed:</span> {{{$event->volunteers_needed}}}</p>
-            <p> <span style="font-weight: bold;">Signup Deadline:</span> {{{$event->signup_deadline}}}</p>
-            <p> Created {{{$event->created_at->diffForHumans()}}}</p>
-          <a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>
-          @endforeach
-        {{ $events->links() }}
+            @foreach($events as $event)
+          <div class="extra-spacing">
+              <h3> <a id="color" href="{{{action('EventsController@show', $event->id)}}}">{{{$event->name}}}</h3></a>
+              <p>{{{$event->description}}} </p>
+              <p> <span style="font-weight: bold;">Location:</span> {{{$event->location}}}</p>
+              <p> <span style="font-weight: bold;">Event Date:</span> {{{$event->event_date}}}</p>
+              <p> <span style="font-weight: bold;">Number of Volunteers needed:</span> {{{$event->volunteers_needed}}}</p>
+              <p> <span style="font-weight: bold;">Signup Deadline:</span> {{{$event->signup_deadline}}}</p>
+              <p> Created {{{$event->created_at->diffForHumans()}}}</p>
+            <a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>
+          </div>
+            {{ $events->links() }}
+            @endforeach
       </div>
 @stop

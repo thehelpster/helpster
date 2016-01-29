@@ -65,9 +65,8 @@
             	</div>
         	</div>
         </div> 
-
     </div>                 
-	<div class="col-md-8 col-md-offset-4 eventabout">
+	<div class="col-md-8 col-md-offset-4 eventabout extra-spacing">
     	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
         <ul>
             <li> 
@@ -80,6 +79,6 @@
     	    </li>
         </ul>       
 	</div>
-</div> 
+</div>
 
 @stop
