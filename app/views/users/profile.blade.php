@@ -19,9 +19,6 @@
                 <p> {{{$rsvp->about}}}</p>
             </div>
         </header>
-       {{--  @if (Entrust::is('site_admin'))
-            <h1>You're an admin</h1>
-        @endif --}}
         <ul>
         	<li>Member since: <em>{{{ $rsvp->created_at }}}</em></li>
             <li>From: <em>{{{ $rsvp->zip }}}</em></li>

@@ -74,4 +74,10 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
 	{
 		return $this->belongsToMany('VolunteerEvent', 'rsvps');
 	}
+
+	public function roles()
+	{
+		return $this->belongsToMany('Role');
+	}
+
 }

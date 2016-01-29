@@ -11,13 +11,21 @@
             <p> <span style="font-weight: bold;">Signup Deadline:</span> {{{$event->signup_deadline}}}</p>
 
 		{{Form::open(array('action'=>array('EventsController@makeEventReservation',$event->id),'method'=>'POST'))}}
-		{{Form::label('response','Yes')}}
-		{{Form::radio('response', 'yes')}}
-		{{Form::label('response','Maybe')}}
-		{{Form::radio('response', 'maybe')}}
-		{{Form::label('response','No')}}
-		{{Form::radio('response', 'no')}}
+		<div class="extra-spacing">
+			<div>
+				{{Form::radio('response', 'yes')}}
+				{{Form::label('response','Yes')}}
+			</div>
+			<div>
+				{{Form::radio('response', 'maybe')}}
+				{{Form::label('response','Maybe')}}
+			</div>
+			<div>
+				{{Form::radio('response', 'no')}}
+				{{Form::label('response','No')}}
+			</div>
 		<button type="submit" class="btn btn-info">Submit your response</button>
 		{{Form::close()}}
-	</div>
+		</div><!--radio button div-->
+	</div><!--container div-->
 @stop
