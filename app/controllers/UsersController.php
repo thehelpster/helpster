@@ -218,7 +218,6 @@ class UsersController extends \BaseController {
                 } else {
                     $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
                 }
-                dd($err_msg);
                 return Redirect::action('UsersController@login')
                     ->withInput(Input::except('password'))
                     ->with('error', $err_msg);
