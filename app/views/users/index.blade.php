@@ -54,11 +54,11 @@
  <hr>                 
     	<div class="row">
         	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
-    		<div class="col-sm-2">
+    		<div class="col-sm-2 extra-spacing">
             <img src="http://firstqualityplumbingfl.com/wp-content/uploads/2013/11/plumbing-questions.jpg" class="img-responsive img-rounded">
             <h3>I volunteered to fix someones plumbing</h3>
         	</div>
-        	<div class="col-sm-2">
+        	<div class="col-sm-2 extra spacing">
             <img src="http://www.carpentrybyrob.com/img/carpentry%20by%20rob.jpg" class="img-responsive img-rounded">
             <h3>I helped someone fix the frame in their home</h3>
         	</div>

@@ -54,7 +54,7 @@
 
 			<section class="blog">
 				@foreach($events as $event)
-          <div class="item col-md-4">
+          <div class="item col-md-4 extra-spacing">
              <div class="blok-read-sm">
                <a href="{{{action('EventsController@show', $event->id)}}}" class="hover-image">
                   {{-- <img src="/images/organizations/{{{$event->image}}}" alt="image"> --}}
