@@ -9,11 +9,12 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    @if(Request::is('/'))
-                      <li class="selected"><a href="{{{ action('HomeController@showWelcome')}}}">Home</a></li>
-                    @else
-                      <li><a href="{{{ action('HomeController@showWelcome')}}}">Home</a></li>
-                    @endif
+                    <li class= "visible-xs visible-sm">
+                      <a rel="home" href="{{{action('HomeController@showWelcome')}}}">Home</a>
+                    </li>
+                    <li class= "hidden-xs hidden-sm">
+                      <a rel="home" href="{{{action('HomeController@showWelcome')}}}"><img class="logo" src="/images/helpster.png" width="100" alt="logo"></a>
+                    </li>
                     @if(Request::is('about'))
                       <li class="selected"><a href="{{{action('HomeController@about')}}}">About</a></li>
                     @else
@@ -24,9 +25,7 @@
                     @else
                       <li><a href="{{{ action('EventsController@index')}}}">Events</a></li>
                     @endif
-          <li class= "hidden-xs hidden-sm">
-            <a rel="home" href="index.html"><img class="logo" src="images/Hat-02.png" width="100" alt="logo"></a>
-          </li>
+
                     @if(Request::is('organization'))
                       <li class="selected"><a href="{{{ action('OrganizationsController@index')}}}">Organizations</a></li>
                     @else

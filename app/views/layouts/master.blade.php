@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="/css/testimonial.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    
+    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="icon" href="favicon.ico" >
+    <link rel="icon" type="image/gif" href="animated_favicon1.gif">
 
     @yield('top-script')
 </head>
@@ -34,7 +36,7 @@
        @if(Session::has('successMessage'))
         {{{Session::get('successMessage')}}}
         @endif
-        @yield('content')
+    @yield('content')
     </div>
 
     @include('partials.footer')
