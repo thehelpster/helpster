@@ -1,4 +1,5 @@
 <?php
+use Imanee\Imanee;
 
 class EventsController extends \BaseController {
 
@@ -39,7 +40,12 @@ class EventsController extends \BaseController {
 		return $this->validateAndCreate($event);
 	}
 
+	public function find($id)
+	{
+		$event = Volunteer::find($id);
 
+		return $event;
+	}
 	/**
 	 * Display the specified resource.
 	 *
