@@ -19,7 +19,7 @@
 				{{ Form::label('password', 'Password') }}
 				<div>
 					{{ Form::password('password', array('placeholder'=> 'Type password here', 'class'=>'form-control')) }} 
-				</div>	
+				</div>		
 				@if($errors->has('password'))
 					<p class="alert alert-danger">
 						{{$errors->first('password')}}

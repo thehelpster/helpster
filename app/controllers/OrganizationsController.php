@@ -85,7 +85,7 @@ class OrganizationsController extends \BaseController {
 	{
 		$organization = Organization::find($id);
 
-		return $this->validateAndSave($organization);	
+		return $this->validateAndUpdate($organization);	
 	}
 
 
@@ -103,9 +103,43 @@ class OrganizationsController extends \BaseController {
 		return Redirect::action('OrganizationsController@index');
 	}
 
-	public function validateAndSave($organization)
+	public function validateAndUpdate($organization)
 	{
 	    $validator = Validator::make(Input::all(), Organization::$editRules);
+
+
+		if ($validator->fails()) { 
+			$messages = $validator->errors();
+			
+	    	return Redirect::back()->withInput()->withErrors($messages);
+	    } else {
+			$organization->name = Input::get('name');
+			$organization->description = Input::get('description');
+			if(Input::hasfile('image'))
+			{
+			Input::file('image')->move(__DIR__.'/../../public/images/organizations', Input::file('image')->getClientOriginalName());
+			$image = new Imanee(__DIR__.'/../../public/images/organizations/'.Input::file('image')->getClientOriginalName());
+			$image->resize(200,150)->write(__DIR__.'/../../public/images/organizations/'.Input::file('image')->getClientOriginalName());
+			$organization->image = Input::file('image')->getClientOriginalName();
+			}
+			$organization->website = Input::get('website');
+			$organization->user_id = Input::get('user_id');
+
+
+			$result = $organization->save();
+
+			if($result) {
+				return Redirect::action('OrganizationsController@show', $organization->id);
+			} else {
+				return Redirect::back()->withInput();
+			}
+		}
+
+	}
+
+	public function validateAndSave($organization)
+	{
+	    $validator = Validator::make(Input::all(), Organization::$rules);
 
 
 		if ($validator->fails()) { 
