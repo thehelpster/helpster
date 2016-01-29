@@ -33,13 +33,27 @@
 
 .about{
   display: block;
-  border: 1px solid black;
+  border: 1px solid #A15700;
   border-radius: 5px;
   padding: 15px 15px;
+  background-color: #FFAD4B;
+  opacity: .90;
+  text-align: center;
 }
 
 .orgabout{
   padding: 0px 100px;
+}
+.orgabout h2 {
+  color: #A15700;
+}
+
+.eventabout{
+  padding: 0px 100px;
+}
+
+.eventabout h2 {
+  color: #A15700;
 }
 
 html {
@@ -60,4 +74,7 @@ body {
 }
 #color {
   color: #F7941E;
+}
+
+
 }
