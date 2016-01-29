@@ -19,9 +19,6 @@
                 <p> {{{$rsvp->about}}}</p>
             </div>
         </header>
-       {{--  @if (Entrust::is('site_admin'))
-            <h1>You're an admin</h1>
-        @endif --}}
         <ul>
         	<li>Member since: <em>{{{ $rsvp->created_at }}}</em></li>
             <li>From: <em>{{{ $rsvp->zip }}}</em></li>
@@ -46,13 +43,13 @@
 {{-- <div class="line-separator"></div>
  --}}    {{--Other users leave comments regarding the performance of the user they worked with --}} 
  <hr>                 
-    	<div class="row">
+    	<div class="row extra-spacing">
         	<h2>{{{$rsvp->first_name}}} {{{$rsvp->last_name}}}'s Recent Work</h2>
-    		<div class="col-sm-2">
+    		<div class="col-sm-2 extra_spacing">
             <img src="http://firstqualityplumbingfl.com/wp-content/uploads/2013/11/plumbing-questions.jpg" class="img-responsive img-rounded">
             <h3>I volunteered to fix someones plumbing</h3>
         	</div>
-        	<div class="col-sm-2">
+        	<div class="col-sm-2 extra-spacing">
             <img src="http://www.carpentrybyrob.com/img/carpentry%20by%20rob.jpg" class="img-responsive img-rounded">
             <h3>I helped someone fix the frame in their home</h3>
         	</div>

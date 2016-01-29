@@ -23,8 +23,8 @@
 .after{
   clear: left;
 }
-.body-content{
-
+.extra-spacing{
+  margin-bottom: 50px;
 }
 
 .alert{
