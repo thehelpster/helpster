@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 class UsersTableSeeder extends Seeder {
 
@@ -69,11 +69,31 @@ class UsersTableSeeder extends Seeder {
         $testVolunteer->confirmed = 1;
         $testVolunteer->save();
 
+        $volunteer1 = new User;
+        $volunteer1->email = 'ryan@smith.com';
+        $volunteer1->password = 'password';
+        $volunteer1->password_confirmation = 'password';
+        $volunteer1->first_name = 'Ryan';
+        $volunteer1->last_name = 'Smith';
+        $volunteer1->birthday = '1981-03-23';
+        $volunteer1->zip = '78324';
+        $volunteer1->gender = 'M';
+        $volunteer1->confirmation_code = md5(uniqid(mt_rand(),true));
+        $volunteer1->confirmed = 1;
+        $volunteer1->save();
 
-        // if(! $user->save()) {
-        //     Log::info('Unable to create user '.$user->email, (array)$user->errors());
-        // } else {
-        //     Log::info('Created user '.$user->email);
+        $volunteer2 = new User;
+        $volunteer2->email = 'bryan@chase.com';
+        $volunteer2->password = 'password';
+        $volunteer2->password_confirmation = 'password';
+        $volunteer2->first_name = 'Bryan';
+        $volunteer2->last_name = 'Chase';
+        $volunteer2->birthday = '1975-02-03';
+        $volunteer2->zip = '78834';
+        $volunteer2->gender = 'M';
+        $volunteer2->confirmation_code = md5(uniqid(mt_rand(),true));
+        $volunteer2->confirmed = 1;
+        $volunteer2->save();
         
     }
 }
