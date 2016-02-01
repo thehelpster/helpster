@@ -9,7 +9,7 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function index()
 	{	
-		$organizations = Organization::paginate(5);
+		$organizations = Organization::paginate(8);
 
 		return View::make('organization.index')->with('organizations', $organizations);
 	}
