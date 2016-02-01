@@ -33,9 +33,7 @@
                     <p> {{{ Auth::user()->about }}}</p>
                 </div>
             </header>
-           {{--  @if (Entrust::is('admin'))
-                <h1>You're an admin</h1>
-            @endif --}}
+
             <ul>
             	<li>
                     Member since: <em>{{{ Auth::user()->created_at->format('Y-m-d') }}}</em>
@@ -66,7 +64,7 @@
         	</div>
         </div> 
     </div>                 
-	<div class="col-md-8 col-md-offset-5 eventabout extra-spacing">
+	<div class="col-md-8 col-md-offset-5g eventabout extra-spacing">
     	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
         <ul>
             <li> 
