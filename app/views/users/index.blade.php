@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 about">
+        <div class="col-md-5 about">
         	<div class="row">
         	</div>
             @if(!Auth::user()->image)
@@ -18,10 +18,11 @@
                 </div>
             @endif    
                 <h1>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h1>
-                <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
+
+                    <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
+                    <a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>  	
             	
-        		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>
-            	
+
         	<h4>{{{ Auth::user()->quote }}}</h4>
             <br>
             <hr>
@@ -44,7 +45,7 @@
             </ul>
         </div>
         {{--This section is placed at the top right, this is users past work --}}
-        <div class="col-md-8 orgabout">
+        <div class="col-md-7 orgabout">
         	<div class="row">
             	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Organizations</h2>
             	<div class="row">
@@ -64,7 +65,7 @@
         	</div>
         </div> 
     </div>                 
-	<div class="col-md-8 col-md-offset-4 eventabout extra-spacing">
+	<div class="col-md-8 col-md-offset-5 eventabout extra-spacing">
     	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
         <ul>
             <li> 
