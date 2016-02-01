@@ -177,7 +177,7 @@ class UsersTableSeeder extends Seeder {
         
         //user id of 10
         $volunteer5 = new User;
-        $volunteer5->email = 'isaac@castillo';
+        $volunteer5->email = 'isaac@castillo.com';
         $volunteer5->password = 'password';
         $volunteer5->password_confirmation = 'password';
         $volunteer5->first_name = 'Isaac';
