@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-4"> 
 		{{ Form::model($event, array('action' => array('EventsController@update', $event->id), 'method' => 'PUT')) }}
 		{{Form::hidden('org_id', $event->org_id)}}
 		  <div class="form-group">
@@ -37,6 +39,8 @@
 		  <button type="submit" class="btn btn-primary">Submit Changes</button>
 		
 		{{ Form::close() }}
-	</div>
+		</div><!--column div--> 
+	</div><!--row div--> 
+</div><!--container div--> 
 
 @stop
