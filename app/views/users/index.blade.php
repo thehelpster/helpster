@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 about">
+        <div class="col-md-5 about">
         	<div class="row">
         	</div>
             @if(!Auth::user()->image)
@@ -45,7 +45,7 @@
             </ul>
         </div>
         {{--This section is placed at the top right, this is users past work --}}
-        <div class="col-md-8 orgabout">
+        <div class="col-md-7 orgabout">
         	<div class="row">
             	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Organizations</h2>
             	<div class="row">
@@ -65,7 +65,7 @@
         	</div>
         </div> 
     </div>                 
-	<div class="col-md-8 col-md-offset-4 eventabout extra-spacing">
+	<div class="col-md-8 col-md-offset-5 eventabout extra-spacing">
     	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
         <ul>
             <li> 
