@@ -158,7 +158,7 @@ class EventsController extends \BaseController {
 	public function save($result)
 	{
 
-		return Redirect::action('EventsController@show', $event->id);
+		return Redirect::action('EventsController@show', $result->id);
 		
 	}
 	
