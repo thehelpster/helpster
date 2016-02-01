@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="divider col-sm-12 col-xs-12 col-md-12">
-        <div class="header-text"><span>Organizations You Can Help</span></div>
+        <div class="header-text" id="color"><span>Organizations You Can Help</span></div>
     </div>
 
    <!-- Page Content -->
