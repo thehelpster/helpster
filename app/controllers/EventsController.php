@@ -72,7 +72,7 @@ class EventsController extends \BaseController {
 	public function edit($id)
 	{
 		$event = VolunteerEvent::find($id);
-		$organizations = Organization::where('user_id', '=', Auth::user()->id)->list('id','name');
+		$organizations = Organization::where('user_id', '=', Auth::user()->id)->lists('id','name');
 		return View::make('events.edit', compact('event','organizations'));
 	}
 
