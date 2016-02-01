@@ -19,11 +19,9 @@
             @endif    
                 <h1>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h1>
                 <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
-            	@if (!Auth::user()->hasRole('volunteer'))
-            		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>
-            	@else
-            		{{-- <a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Test an Organization</a>  --}}   	
-            	@endif
+            	
+        		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>
+            	
         	<h4>{{{ Auth::user()->quote }}}</h4>
             <br>
             <hr>

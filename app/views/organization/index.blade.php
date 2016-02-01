@@ -21,8 +21,9 @@
                 </a>
             
           </div>
-            {{ $organizations->links() }}
+            
         @endforeach
+        {{ $organizations->links() }}
       </div>
     </div>
 @stop

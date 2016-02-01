@@ -9,7 +9,7 @@ class OrganizationsController extends \BaseController {
 	 */
 	public function index()
 	{	
-		$organizations = Organization::paginate(5);
+		$organizations = Organization::paginate(8);
 
 		return View::make('organization.index')->with('organizations', $organizations);
 	}
@@ -34,12 +34,10 @@ class OrganizationsController extends \BaseController {
 	public function store()
 	{
 		$organization = new Organization();
-		$userRole = Role::where('name', 'admin')->first();
-		Auth::user()->attachRole($userRole->id);
-		Auth::user()->Roles()->sync(array(2));
+		// $userRole = Role::where('name', 'admin')->first();
+		// Auth::user()->attachRole($userRole->id);
+		// Auth::user()->Roles()->sync(array(2));
 		
-		
-
 		return $this->validateAndSave($organization);
 	}
 
@@ -161,6 +159,9 @@ class OrganizationsController extends \BaseController {
 
 
 			$result = $organization->save();
+			$userRole = Role::where('name', 'admin')->first();
+			Auth::user()->attachRole($userRole->id);
+			Auth::user()->Roles()->sync(array(2));
 
 			if($result) {
 				return Redirect::action('OrganizationsController@show', $organization->id);
