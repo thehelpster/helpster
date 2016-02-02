@@ -17,7 +17,10 @@
               <p> Created {{{$event->created_at->diffForHumans()}}}</p>
             <a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>
           </div>
+<<<<<<< HEAD
             
+=======
+>>>>>>> 59a832ee741df13906cc1a3fa1f2a6affbc841dc
             @endforeach
             {{ $events->links() }}
       </div>
