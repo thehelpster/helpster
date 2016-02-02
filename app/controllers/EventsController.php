@@ -10,7 +10,7 @@ class EventsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$events = VolunteerEvent::paginate(5);
+		$events = VolunteerEvent::paginate(4);
 
 		return View::make('events.index')->with('events', $events);
 	}
@@ -117,7 +117,7 @@ class EventsController extends \BaseController {
 			$event->event_date = Input::get('event_date');
 			$event->volunteers_needed = Input::get('volunteers_needed');
 			$event->signup_deadline = Input::get('signup_deadline');
-			$result = $event->save();
+			
 
 			if(!$result)
 			{
@@ -125,6 +125,8 @@ class EventsController extends \BaseController {
 			}
 
 			return $this->save($result);
+			
+			$result = $event->save();
 		}
 	}	
 
