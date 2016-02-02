@@ -117,14 +117,17 @@ class EventsController extends \BaseController {
 			$event->event_date = Input::get('event_date');
 			$event->volunteers_needed = Input::get('volunteers_needed');
 			$event->signup_deadline = Input::get('signup_deadline');
+
 			$result = $event->save();
 
 			if(!$result)
 			{
 				return Redirect::back()->withInput();
 			}
-
-			return $this->save($result);
+			else
+			{
+				return Redirect::action('EventsController@show', $event->id);
+			}
 		}
 	}	
 
@@ -144,23 +147,26 @@ class EventsController extends \BaseController {
 			$event->volunteers_needed = Input::get('volunteers_needed');
 			$event->signup_deadline = Input::get('signup_deadline');
 
-			return $this->save($result);
+			$result = $event->save();
 
 			if(!$result)
 			{
 				return Redirect::back()->withInput();
 			}
-
-			$result = $event->save();
+			else
+			{
+				return Redirect::action('EventsController@show', $event->id);
+			}
+			
 		}
 	}
 
-	public function save($result)
-	{
+	// public function save($result)
+	// {
 
-		return Redirect::action('EventsController@show', $result->id);
+	// 	return Redirect::action('EventsController@show', $result->id);
 		
-	}
+	// }
 	
 	public function register($id)
 	{

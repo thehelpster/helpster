@@ -16,6 +16,16 @@ class VolunteerEvent extends BaseModel
 
 	);
 
+	public static $updateRules = array(
+		'name' => 'min:10|max:255',
+		'event_date' => 'required',
+		'location' => 'required|min:7',
+		'description' => 'required|min:10',
+		'volunteers_needed' => 'required',
+		'signup_deadline' => 'required'
+
+	);
+
 	public function organization()
 	{
 		return $this->belongsTo('Organization');
