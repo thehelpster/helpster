@@ -19,11 +19,10 @@
             @endif    
                 <h1>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}</h1>
 
-
                 <a href="{{{ action('UsersController@edit', Auth::user()->id) }}}" class="btn btn-primary">Edit Profile</a>
             	
         		<a href="{{{ action('OrganizationsController@create') }}}" class="btn btn-primary">Create an Organization</a>
-            	
+
         	<h4>{{{ Auth::user()->quote }}}</h4>
             <br>
             <hr>
@@ -64,7 +63,9 @@
         	</div>
         </div> 
     </div>                 
-	<div class="col-md-8 col-md-offset-5g eventabout extra-spacing">
+
+	<div class="col-md-8 col-md-offset-5 eventabout extra-spacing">
+
     	<h2>{{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}}'s Recent Work</h2>
         <ul>
             <li> 
