@@ -9,12 +9,18 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-        $user = Auth::user();
-    	   if(empty($user->first_name)|| empty($user->last_name)|| empty($user->zip)) {
+	    $rsvps = Rsvp::where('user_id','=', Auth::user()->id)->get();
+        $organizations = Organization::get();
 
-                return Redirect::action('UsersController@edit', [$user->id]);
-            }
-        return View::make('users.index');
+        $user = Auth::user();
+
+	    if(empty($user->first_name)|| empty($user->last_name)|| empty($user->zip)) {
+
+            return Redirect::action('UsersController@edit', [$user->id]);
+        }
+
+        return View::make('users.index')->with('rsvps',$rsvps);
+
 	}
 
 
