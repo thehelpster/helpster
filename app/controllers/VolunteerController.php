@@ -67,6 +67,7 @@ class VolunteerController extends BaseController {
 	public function viewUser($id)
 	{
 		$user = User::find($id);
+		
 		return View::make('users.profile')->with('rsvp', $user); 
 	}
 }

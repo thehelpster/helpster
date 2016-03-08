@@ -21,6 +21,17 @@
                 {{ Form::label('zip', 'Zip Code')}}
                 {{ Form::text('zip',null, array('class'=>'form-control'))}}
         	</div>
+            <div "form-group">
+                {{ $errors->first('birthday', '<span class="help-block">:message</span>') }}
+                {{ Form::label('birthday', 'Birthday') }}
+                {{ Form::input('date', 'birthday', null, array('placeholder'=> 'Type your birth date here', 'class'=>'form-control')) }} 
+            </div>
+            <div class="form-group">
+                    {{ Form::label('gender', 'Male') }}
+                    {{ Form::radio('gender', 'M', array('class'=>'form-control')) }} 
+                    {{ Form::label('gender', 'Female') }}
+                    {{ Form::radio('gender', 'F', array('class'=>'form-control')) }} 
+                </div> 
     		<div "form-group">
                 {{ $errors->first('quote', '<span class="help-block">:message</span>') }}
                 {{ Form::label('quote', 'Quote')}}
