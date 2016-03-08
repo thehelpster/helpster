@@ -59,6 +59,18 @@
                     @else
                       <li><a href="{{{ action('HomeController@contact')}}}">Contact</a></li>
                     @endif
+                    <li>
+                      <form action="{{{action('SearchController@getSearch')}}}">
+                        <li class="form-group">
+                          <input name="q" type="text" class="form-control" placeholder="Search">
+                        </li>
+                        <li>  
+                          <div class="margin-button">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </li>
+                    </form>
+                  </li>
                 </ul>
             </div>
         </div>

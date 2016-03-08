@@ -32,18 +32,20 @@ class User extends Eloquent implements ConfideUserInterface, EntrustUserInterfac
                 min:6|
                 confirmed',
         'password_confirmation' => 'required|same:password',
-		'first_name' => 'required|min:2|max:100',
-		'last_name' => 'required|min:2|max:100',
-		'birthday' => 'required',
-		'zip' => 'required|max:5',
-		'gender' => 'max:1',
-		'image' => 'image'
+		// 'first_name' => 'required|min:2|max:100',
+		// 'last_name' => 'required|min:2|max:100',
+		// 'birthday' => 'required',
+		// 'zip' => 'required|max:5',
+		// 'gender' => 'max:1',
+		// 'image' => 'image'
 	);
 
 	public static $updateRules = array(
 		'first_name' => 'required|min:2|max:100',
 		'last_name' => 'required|min:2|max:100',
+		'birthday' => 'required',
 		'zip' => 'required|max:5',
+		'gender' => 'max:1',
 		'quote' => 'min:5|max:255',
 		'image' => 'image'
 	);

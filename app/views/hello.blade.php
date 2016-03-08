@@ -4,7 +4,7 @@
     	<div class="container header-start text-center">
           <h1 id="color">Helpster</h1>
 
-      <h1 class="main-text" id="color">Help Someone Today</h1>
+      <h1 class="main-text">Help Someone Today</h1>
       <p class="text-center sub-text">Helpster is designed to serve communities in the most direct way. If you know someone who needs help - nominate them, if you are an organization who needs volunteers - you will find them here. If you have the heart of a servant, you will find people who need your help here.</p>
     </div>
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
