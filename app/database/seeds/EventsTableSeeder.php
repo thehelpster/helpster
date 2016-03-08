@@ -33,7 +33,7 @@ class EventsTableSeeder extends Seeder {
         $volunteerEvent3->description = 'This is a day where all Codeup student\'s will voluntarily demo anything that they want.';
         $volunteerEvent3->volunteers_needed = '100';
         $volunteerEvent3->signup_deadline = '2016-03-19';
-        $volunteerEvent3->org_id = 1;
+        $volunteerEvent3->org_id = 2;
         
         $volunteerEvent3->save();
 
@@ -44,7 +44,7 @@ class EventsTableSeeder extends Seeder {
         $volunteerEvent4->description = 'This is a day where all Codeup student\'s will voluntarily demo anything that they want.';
         $volunteerEvent4->volunteers_needed = '100';
         $volunteerEvent4->signup_deadline = '2016-02-19';
-        $volunteerEvent4->org_id = 1;
+        $volunteerEvent4->org_id = 7;
         
         $volunteerEvent4->save();
 
@@ -55,7 +55,7 @@ class EventsTableSeeder extends Seeder {
         $volunteerEvent5->description = 'This is a day where all Codeup student\'s will voluntarily demo anything that they want.';
         $volunteerEvent5->volunteers_needed = '100';
         $volunteerEvent5->signup_deadline = '2016-03-19';
-        $volunteerEvent5->org_id = 1;
+        $volunteerEvent5->org_id = 8;
         
         $volunteerEvent5->save();
     }

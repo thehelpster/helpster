@@ -9,8 +9,9 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-	
-        return View::make('users.index');
+	    $rsvps = Rsvp::where('user_id','=', Auth::user()->id)->get();
+        $organizations = Organization::get();
+        return View::make('users.index')->with('rsvps',$rsvps);
 	}
 
 
@@ -53,18 +54,18 @@ class UsersController extends \BaseController {
             $user = $repo->signup(Input::all());
 
             if ($user->id) {
-            //     if (Config::get('confide::signup_email')) {
-            //         Mail::queueOn(
-            //             Config::get('confide::email_queue'),
-            //             Config::get('confide::email_account_confirmation'),
-            //             compact('user'),
-            //             function ($message) use ($user) {
-            //                 $message
-            //                     ->to($user->email, $user->username)
-            //                     ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
-            //             }
-            //         );
-            //     }
+                if (Config::get('confide::signup_email')) {
+                    Mail::queueOn(
+                        Config::get('confide::email_queue'),
+                        Config::get('confide::email_account_confirmation'),
+                        compact('user'),
+                        function ($message) use ($user) {
+                            $message
+                                ->to($user->email, $user->username)
+                                ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                        }
+                    );
+                }
 
                 $userRole = Role::where('name', 'volunteer')->first();
 

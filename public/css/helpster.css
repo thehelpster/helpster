@@ -31,8 +31,10 @@
   width: 54%;
 }
 
+
+
 .about{
-  display: block;
+  /*display: block;*/
   border: 1px solid #A15700;
   border-radius: 5px;
   padding: 15px 15px;
@@ -40,6 +42,17 @@
   opacity: .90;
   text-align: center;
   color: #A15700;
+}
+
+.eventabout{
+  /*display: block;*/
+  border: 1px solid #A15700;
+  border-radius: 5px;
+  padding: 15px 15px;
+  background-color: #FFAD4B;
+  opacity: .90;
+  text-align: center;
+  color: #15700;
 }
 
 .orgabout{

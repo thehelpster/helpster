@@ -118,10 +118,13 @@ class EventsController extends \BaseController {
 			$event->volunteers_needed = Input::get('volunteers_needed');
 			$event->signup_deadline = Input::get('signup_deadline');
 
-			return $this->save($result);
 			
 			$result = $event->save();
 
+			if(!$result)
+			{
+				return Redirect::back()->withInput();
+			}
 			else
 			{
 				return Redirect::action('EventsController@show', $event->id);
