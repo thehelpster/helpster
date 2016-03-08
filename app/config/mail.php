@@ -54,7 +54,9 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'postmaster@helpster.site', 'name' => 'Roger Chin'),
+
+	'from' => array('address' => 'Postmaster@helpster.site', 'name' => 'Jerald'),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +82,9 @@ return array(
 	|
 	*/
 
-	'username' => 'postmaster@sandbox24351aab8a1e42c292e86736c585e52b.mailgun.org',
+
+	'username' => 'postmaster@sandboxc3886d4e0ae94abbb1a9849da3da6288.mailgun.org',
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +97,9 @@ return array(
 	|
 	*/
 
-	'password' => '2ad7a00a3678aac7c382d83b0dd14113',
+
+	'password' => '1a6e40b08d36158e61e302e6292f5f48',
+
 
 	/*
 	|--------------------------------------------------------------------------

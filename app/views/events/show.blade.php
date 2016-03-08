@@ -11,7 +11,8 @@
             <p> <span style="font-weight: bold;">Signup Deadline:</span> {{{$event->signup_deadline}}}</p>
             <p> Created {{{$event->created_at->diffForHumans()}}}</p>
 
-            @if(Auth::user())
+            @if(Auth::user()->hasRole('admin'))
+
             	<a href="{{{action('EventsController@edit', $event->id)}}}" class="btn btn-primary">Edit Event</a>
             @endif
             	<a href="{{{action('EventsController@register', $event->id)}}}" class="btn btn-primary">Register Now</a>

@@ -11,7 +11,16 @@ class UsersController extends \BaseController {
 	{
 	    $rsvps = Rsvp::where('user_id','=', Auth::user()->id)->get();
         $organizations = Organization::get();
+
+        $user = Auth::user();
+
+	    if(empty($user->first_name)|| empty($user->last_name)|| empty($user->zip)) {
+
+            return Redirect::action('UsersController@edit', [$user->id]);
+        }
+
         return View::make('users.index')->with('rsvps',$rsvps);
+
 	}
 
 
@@ -22,10 +31,12 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{   
-		return View::make('users.signup');
-	}
-
-
+        return View::make('users.signup');
+    }
+    public function create2()
+    {   
+        return View::make('users.success');
+    }
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -70,17 +81,19 @@ class UsersController extends \BaseController {
                 $userRole = Role::where('name', 'volunteer')->first();
 
                 $user->attachRole($userRole->id);
+                // $user->confirmed = true;
+                // $user->save();
+                // $result = Auth::attempt(['email' => $user->email, 'password' => Input::get('password')]);
 
-                return Redirect::action('UsersController@login')
-                    ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+                return Redirect::action('UsersController@create2')
+                     ->with('notice', Lang::get('confide::confide.alerts.account_created'));
             } else {
 
                 $error = $user->errors()->all(':message');
-
+                // dd($error);
                             } //
         } //closes else for validator-if 
 	}
-
 
 	/**
 	 * Display the specified resource.
@@ -149,9 +162,12 @@ class UsersController extends \BaseController {
             die;
 	    return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
-			$user->first_name = Input::get('first_name');
+			//$user = new User();
+            $user->first_name = Input::get('first_name');
 			$user->last_name = Input::get('last_name');
 			$user->zip = Input::get('zip');
+            $user->birthday = Input::get('birthday');
+            $user->gender = Input::get('gender');
             $user->quote = Input::get('quote');
             $user->about = Input::get('about');
             $image = Input::file('image');
@@ -160,12 +176,13 @@ class UsersController extends \BaseController {
             if(Input::hasfile('image'))
             {
             Input::file('image')->move(__DIR__.'/../../public/images/users', Input::file('image')->getClientOriginalName());
-            $image = new Imanee(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
-            $image->resize(200,150)->write(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
-            $user->image = Input::file('image')->getClientOriginalName();
+                $image = new Imanee(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
+                $image->resize(200,150)->write(__DIR__.'/../../public/images/users/'.Input::file('image')->getClientOriginalName());
+                $user->image = Input::file('image')->getClientOriginalName();
             }
 
 			$result = $user->save();
+            //dd($result,$user);
 
 			if($result) {
 				return Redirect::action('UsersController@index');

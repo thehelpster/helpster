@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@showWelcome');
 Route::get('about', 'HomeController@about');
 Route::get('contact', 'HomeController@contact');
 Route::post('contact', 'UsersController@doContact');
+Route::get('users/create2', 'UsersController@create2');
+Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
 
 
 // Confide routes
