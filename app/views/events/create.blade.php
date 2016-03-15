@@ -8,7 +8,7 @@
 					  <div class="form-group">	
 					    {{ Form::label('org_id', 'Organization') }}
 						{{ Form::select('org_id', $organizations) }}
-						 @if($errors->has('org_id'))
+						@if($errors->has('org_id'))
 					  		<p class="alert alert-danger">
 							{{$errors->first('org_id');}}
 							</p>
