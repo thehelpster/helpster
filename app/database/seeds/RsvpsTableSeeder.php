@@ -23,17 +23,5 @@ class RsvpsTableSeeder extends Seeder
 		$rsvp3->response = 'y';
 		$rsvp3->save();
 
-		$rsvp4 = new Rsvp();
-		$rsvp4->user_id = '4';
-		$rsvp4->event_id = '1';
-		$rsvp4->response = 'y';
-		$rsvp4->save();
-
-		$rsvp5 = new Rsvp();
-		$rsvp5->user_id = '5';
-		$rsvp5->event_id = '1';
-		$rsvp5->response = 'y';
-		$rsvp5->save();
-
 	}
 }	

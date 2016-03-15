@@ -6,7 +6,7 @@
         	<div class="col-md-6 col-md-offset-4"> 
 				{{ Form::open(array('action' => 'OrganizationsController@store', 'files'=>true)) }}
 					{{Form::hidden('user_id', Auth::user()->id)}}
-					  <div class="form-group">
+					 <div class="form-group">
 					    {{$errors->first('name');}}
 					    {{ Form::label('name', 'Name') }}
 						{{ Form::text('name', null, array('placeholder'=> 'Type Title Here', 'class'=>'form-control')) }} 
