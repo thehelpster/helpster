@@ -65,9 +65,11 @@
                           <input name="q" type="text" class="form-control" placeholder="Search">
                         </li>
                         <li>  
-                          <div class="margin-button">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </div>
+                          {{-- <div class="margin-button"> --}}
+                            <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                             </button>
+                          {{-- </div> --}}
                         </li>
                     </form>
                   </li>
