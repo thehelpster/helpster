@@ -59,20 +59,20 @@
                     @else
                       <li><a href="{{{ action('HomeController@contact')}}}">Contact</a></li>
                     @endif
-                    <li>
+                    {{-- <li>
                       <form action="{{{action('SearchController@getSearch')}}}">
                         <li class="form-group">
                           <input name="q" type="text" class="form-control" placeholder="Search">
                         </li>
                         <li>  
-                          {{-- <div class="margin-button"> --}}
+                          <div class="margin-button">
                             <button type="submit" class="btn btn-primary" aria-label="Left Align">
                               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                              </button>
-                          {{-- </div> --}}
+                          </div>
                         </li>
-                    </form>
-                  </li>
+                      </form>
+                    </li> --}}
                 </ul>
             </div>
         </div>
