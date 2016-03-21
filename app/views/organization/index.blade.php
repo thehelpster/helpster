@@ -18,7 +18,7 @@
           <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a href="{{{action('OrganizationsController@show', $organization->id)}}}">
                   <img class="image thumbnail" src="/images/organizations/{{{$organization->image}}}">
-                </a>
+            </a>
             
           </div>
             
